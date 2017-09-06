@@ -4,9 +4,20 @@
     "description": "Klasa extension for VS Code",
     "version": "0.0.1",
     "publisher": "glaucus-pocus",
+    "homepage": "https://github.com/glaucus-pocus/klasa-vscode.git#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/glaucus-pocus/klasa-vscode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/glaucus-pocus/klasa-vscode/issues"
+    },
     "engines": {
         "vscode": "^1.15.0"
     },
+    "keywords": [
+        "klasa"
+    ],
     "categories": [
         "Other"
     ],
