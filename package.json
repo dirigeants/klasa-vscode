@@ -3,7 +3,7 @@
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
     "version": "0.0.1",
-    "publisher": "Pandraghon",
+    "publisher": "glaucus-pocus",
     "engines": {
         "vscode": "^1.15.0"
     },
