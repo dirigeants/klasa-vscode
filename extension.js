@@ -13,7 +13,7 @@ exports.activate = async function (context) {
 			{ label: 'klasa', description: 'From NPM Package' },
 			{ label: 'dirigeants/klasa', description: 'From Github repository' }
 		];
-		const source = await window.showQuickPick(items, { placeHolder: 'Select piece type:' });
+		const source = await window.showQuickPick(items, { placeHolder: 'Select source:' });
 
 		if (!source) return;
 		const terminal = window.createTerminal('Klasa');
