@@ -26,6 +26,12 @@
 		"onCommand:klasa.init"
     ],
     "contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/klasa.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "klasa.init",
