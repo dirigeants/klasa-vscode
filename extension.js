@@ -1,30 +1,33 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-var vscode = require('vscode');
+const { window, commands, workspace, Disposable, ExtensionContext, StatusBarAlignment, StatusBarItem, TextDocument, QuickPickItem } = require('vscode');
+
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-function activate(context) {
+// eslint-disable-next-line func-names
+exports.activate = async function (context) {
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "klasa-vscode" is now active!');
+	const init = commands.registerCommand('klasa.init', async () => {
+		const items = [
+			{ label: 'klasa', description: 'From NPM Package' },
+			{ label: 'dirigeants/klasa', description: 'From Github repository' }
+		];
+		const source = await window.showQuickPick(items, { placeHolder: 'Select piece type:' });
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    var disposable = vscode.commands.registerCommand('extension.sayHello', function () {
-        // The code you place here will be executed every time your command is executed
+		if (!source) return;
+		const terminal = window.createTerminal('Klasa');
 
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
-    });
+		terminal.show();
+		terminal.sendText('npm init -y');
+		terminal.sendText(`npm i ${source.label}`);
+	});
 
-    context.subscriptions.push(disposable);
-}
-exports.activate = activate;
+	context.subscriptions.push(init);
+};
 
 // this method is called when your extension is deactivated
-function deactivate() {
-}
-exports.deactivate = deactivate;
+// eslint-disable-next-line func-names
+exports.deactivate = function () {
+};
+

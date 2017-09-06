@@ -11,17 +11,18 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+		"workspaceContains:komada.js",
+		"onCommand:klasa.init"
     ],
-    "main": "./extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
-    },
+		"commands": [
+			{
+				"command": "klasa.init",
+				"title": "Klasa: Initialize new bot"
+			}
+		]
+	},
+    "main": "./extension",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
