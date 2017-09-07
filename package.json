@@ -7,7 +7,7 @@
     "homepage": "https://github.com/glaucus-pocus/klasa-vscode.git#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/glaucus-pocus/klasa-vscode.git"
+        "url": "https://github.com/glaucus-pocus/klasa-vscode.git"
     },
     "bugs": {
         "url": "https://github.com/glaucus-pocus/klasa-vscode/issues"
