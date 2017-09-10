@@ -13,6 +13,7 @@
         "url": "https://github.com/glaucus-pocus/klasa-vscode/issues"
     },
     "engines": {
+        "node": ">=8.1.0",
         "vscode": "^1.15.0"
     },
     "keywords": [
@@ -22,23 +23,27 @@
         "Other"
     ],
     "activationEvents": [
-		"workspaceContains:komada.js",
-		"onCommand:klasa.init"
+        "workspaceContains:komada.js",
+        "onCommand:klasa.init"
     ],
     "contributes": {
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets/klasa.json"
-			}
-		],
-		"commands": [
-			{
-				"command": "klasa.init",
-				"title": "Klasa: Initialize new bot"
-			}
-		]
-	},
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/klasa.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "klasa.newPiece",
+                "title": "Klasa: Create new piece"
+            },
+            {
+                "command": "klasa.init",
+                "title": "Klasa: Initialize new bot"
+            }
+        ]
+    },
     "main": "./extension",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
@@ -51,5 +56,8 @@
         "eslint": "^4.6.1",
         "@types/node": "^8.0.26",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "fs-extra": "^4.0.1"
     }
 }
