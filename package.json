@@ -24,6 +24,7 @@
     ],
     "activationEvents": [
         "workspaceContains:komada.js",
+        "onCommand:klasa.newPiece",
         "onCommand:klasa.init"
     ],
     "contributes": {

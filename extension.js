@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const fs = require('fs-extra');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
 const { window, commands, workspace, SnippetString, Uri } = require('vscode');
 
 const pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
@@ -12,6 +12,67 @@ const pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 
 exports.activate = async function (context) {
 	const snippets = require('./snippets/klasa');
 	const eventStorage = getEvents();
+
+	const newPiece = commands.registerCommand('klasa.newPiece', async () => {
+		if (!workspace.rootPath) return window.showErrorMessage('You must have a workspace opened.');
+
+		let pieceType = await window.showQuickPick(pieceTypes, { placeHolder: 'Select piece type:' });
+		if (!pieceType) return false;
+		pieceType = pieceType.toLowerCase();
+		const pieceTypePlural = `${pieceType}s`;
+
+		let piecePath = resolve(workspace.rootPath, pieceTypePlural);
+		let pieceName;
+
+		if (pieceType === 'command') {
+			const items = await walkCommands(piecePath);
+			items.push(
+				{ label: 'Create a new category', description: 'Create a new command category (aka folder)' },
+				{ label: 'None', description: 'Do not put in a category' }
+			);
+			let { label: folderName } = await window.showQuickPick(items, {
+				placeHolder: 'Choose command category',
+				ignoreFocusOut: true
+			});
+
+			if (!folderName) return false;
+
+			if (folderName !== 'Do not put in a category') {
+				if (folderName === 'Create a new category') {
+					folderName = await window.showInputBox({
+						prompt: 'Enter Category name',
+						placeHolder: 'Category name',
+						ignoreFocusOut: true
+					});
+				}
+				piecePath = join(piecePath, folderName);
+			}
+		}
+
+		if (pieceType === 'event') {
+			({ label: pieceName } = await window.showQuickPick(Object.keys(eventStorage.events).map(eventName => ({
+				label: eventName,
+				description: eventStorage.events[eventName].description
+			})),
+			{ placeHolder: 'Select event', ignoreFocusOut: true, matchOnDescription: true }));
+		} else {
+			pieceName = await window.showInputBox({
+				prompt: `Enter the name of the ${pieceType}`,
+				placeHolder: 'Name'
+			});
+		}
+
+		piecePath = resolve(piecePath, `${pieceName}.js`);
+
+		if (await fs.pathExists(piecePath)) {
+			return window.showErrorMessage(`${piecePath} already exists!`);
+		}
+
+		await fs.ensureFile(piecePath);
+		const textDocument = await workspace.openTextDocument(Uri.file(piecePath));
+		const editor = await window.showTextDocument(textDocument);
+		return editor.insertSnippet(generateSnippet(snippets, eventStorage, pieceType, pieceName));
+	});
 
 	const init = commands.registerCommand('klasa.init', async () => {
 		const items = [
@@ -43,6 +104,7 @@ exports.activate = async function (context) {
 // this method is called when your extension is deactivated
 // eslint-disable-next-line func-names
 exports.deactivate = function () {
+	//
 };
 
 class EventStore {
@@ -58,11 +120,20 @@ class EventStore {
 
 }
 
+const walkCommands = async (dir, subs = []) => {
+	const files = await fs.readdir(join(dir, ...subs)).catch(() => { fs.ensureDir(dir); });
+	if (!files) return true;
+	return Promise.all(files
+		.filter(file => fs.statSync(resolve(join(dir, ...subs), file)).isDirectory())
+		.map(async file => (
+			{ label: file, description: join('commands', file) }
+		)));
+};
+
 const generateSnippet = (snippets, eventStorage, pieceType, name = '') => {
 	let content = snippets[`Create new Klasa ${pieceType}`].body.join('\n').replace(/\${1:\${TM_FILENAME_BASE(:[^}]+)?}}/, name);
 	if (pieceType === 'event') {
-		// If there are no arguments, like for the ready event, remove arguments
-		content = content.replace('...args', eventStorage.events[name].arguments || '');
+		content = content.replace(/\.\.\.params/g, eventStorage.events[name].arguments || '');
 	}
 
 	return new SnippetString(content);
