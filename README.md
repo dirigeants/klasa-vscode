@@ -19,3 +19,7 @@ Toolkit for Klasa Discord Bot development.
  - [x] Languages
  - [x] Monitors
  - [ ] Providers
+
+ ## Credit
+
+ `klasa-vscode` is heavily inspired by [`komada-helper`](https://github.com/dada1134/komada-helper)
