@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.0.2",
+    "version": "0.0.9",
     "publisher": "glaucus-pocus",
     "homepage": "https://github.com/glaucus-pocus/klasa-vscode.git#readme",
     "repository": {
