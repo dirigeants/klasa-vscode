@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const fs = require('fs-extra');
-const { resolve, join } = require('path');
+const { resolve, join, dirname } = require('path');
 const { window, commands, workspace, SnippetString, Uri } = require('vscode');
 
 const pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
@@ -16,16 +16,18 @@ exports.activate = async function (context) {
 	const newPiece = commands.registerCommand('klasa.newPiece', async () => {
 		if (!workspace.rootPath) return window.showErrorMessage('You must have a workspace opened.');
 
+		const baseDir = getBaseDir();
+
 		let pieceType = await window.showQuickPick(pieceTypes, { placeHolder: 'Select piece type:' });
 		if (!pieceType) return false;
 		pieceType = pieceType.toLowerCase();
 		const pieceTypePlural = `${pieceType}s`;
 
-		let piecePath = resolve(workspace.rootPath, pieceTypePlural);
+		let piecePath = resolve(baseDir, pieceTypePlural);
 		let pieceName;
 
 		if (pieceType === 'command') {
-			const items = await walkCommands(piecePath);
+			const items = await walkCommands(piecePath) || [];
 			items.push(
 				{ label: 'Create a new category', description: 'Create a new command category (aka folder)' },
 				{ label: 'None', description: 'Do not put in a category' }
@@ -37,7 +39,7 @@ exports.activate = async function (context) {
 
 			if (!folderName) return false;
 
-			if (folderName !== 'Do not put in a category') {
+			if (folderName !== 'None') {
 				if (folderName === 'Create a new category') {
 					folderName = await window.showInputBox({
 						prompt: 'Enter Category name',
@@ -122,7 +124,7 @@ class EventStore {
 
 const walkCommands = async (dir, subs = []) => {
 	const files = await fs.readdir(join(dir, ...subs)).catch(() => { fs.ensureDir(dir); });
-	if (!files) return true;
+	if (!files) return [];
 	return Promise.all(files
 		.filter(file => fs.statSync(resolve(join(dir, ...subs), file)).isDirectory())
 		.map(async file => (
@@ -184,3 +186,12 @@ const getEvents = () => new EventStore()
 	.addEvent('userUpdate', 'oldUser, newUser', "Emitted whenever a user's details (e.g. username) are changed.")
 	.addEvent('voiceStateUpdate', 'oldMember, newMember', 'Emitted whenever a user changes voice state - e.g. joins/leaves a channel, mutes/unmutes.')
 	.addEvent('warn', 'info', 'Emitted for general warnings.');
+
+const getBaseDir = () => {
+	try {
+		const { main } = require(resolve(workspace.rootPath, 'package.json'));
+		return join(workspace.rootPath, dirname(main));
+	} catch (e) {
+		return workspace.rootPath;
+	}
+};
