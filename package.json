@@ -31,7 +31,7 @@
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./snippets/klasa.json"
+                "path": "./src/snippets/klasa.json"
             }
         ],
         "commands": [
@@ -45,7 +45,8 @@
             }
         ]
     },
-    "main": "./extension",
+    "main": "./src/extension",
+    "icon": "./assets/klasa.gif",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
@@ -59,6 +60,6 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "fs-extra": "^4.0.1"
+        "fs-extra": "^4.0.2"
     }
 }

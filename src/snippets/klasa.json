@@ -7,7 +7,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, {",
-            "            name: '${1:${TM_FILENAME_BASE:yourCommandName}}',",
             "            enabled: ${2|true,false|},",
             "            runIn: ['text', 'dm', 'group'],",
             "            cooldown: ${3:0},",
@@ -31,7 +30,8 @@
             "        // You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaCommand",
         "description": "Create new Klasa command"
@@ -44,7 +44,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, { ",
-            "            name:'${1:${TM_FILENAME_BASE:yourEventName}}',",
             "            enabled: ${2|true,false|}",
             "        });",
             "    }",
@@ -58,7 +57,8 @@
             "        // You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaEvent",
         "description": "Create new Klasa event"
@@ -71,7 +71,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, ['Message'], {",
-            "            name: '${1:${TM_FILENAME_BASE:yourExtendableName}}',",
             "            enabled: ${2|true,false|},",
             "            klasa: ${3|false,true|}",
             "        });",
@@ -95,7 +94,8 @@
             "        // Make a method",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaExtendable",
         "description": "Create new Klasa extendable"
@@ -108,7 +108,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, {",
-            "            name: '${1:${TM_FILENAME_BASE:yourFinalizerName}}',",
             "            enabled: ${3|true,false|}",
             "        });",
             "    }",
@@ -122,7 +121,8 @@
             "        // You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaFinalizer",
         "description": "Create new Klasa finalizer"
@@ -135,7 +135,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, {",
-            "            name: '${1:${TM_FILENAME_BASE:yourInhibitorName}}',",
             "            enabled: ${2|true,false|},",
             "            spamProtection: ${3|false,true|}",
             "        });",
@@ -150,7 +149,8 @@
             "        // You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaInhibitor",
         "description": "Create new Klasa inhibitor"
@@ -163,7 +163,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, {",
-            "            name: '${1:${TM_FILENAME_BASE:yourLanguageName}}',",
             "            enabled: ${2|true,false|}",
             "        });",
             "",
@@ -181,7 +180,8 @@
             "        // please note, that as the Language is loaded before the client is loaded, using this.client in a literal sense may throw errors such as: this.client.user.username would throw \"can't get property username of null\"",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaLanguage",
         "description": "Create new Klasa language"
@@ -194,7 +194,6 @@
             "",
             "    constructor(...args) {",
             "        super(...args, {",
-            "            name: '${1:${TM_FILENAME_BASE:yourMonitorName}}',",
             "            enabled: ${2|true,false|},",
             "            ignoreBots: ${3|true,false|},",
             "            ignoreSelf: ${4|true,false|}",
@@ -210,7 +209,8 @@
             "        // You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)",
             "    }",
             "",
-            "};"
+            "};",
+            ""
         ],
         "prefix": "klasaMonitor",
         "description": "Create new Klasa monitor"
@@ -229,7 +229,8 @@
             "    readyMessage: (client) => `${client.user.tag}, Ready to serve ${client.guilds.size} guilds and ${client.users.size} users`",
             "});",
             "",
-            "client.login('${5:your-bot-token}');"
+            "client.login('${5:your-bot-token}');",
+            ""
         ],
         "prefix": "klasaIndex",
         "description": "Create new Klasa entry file"
