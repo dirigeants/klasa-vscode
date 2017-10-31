@@ -2,26 +2,51 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.0.1",
-    "publisher": "Pandraghon",
+    "version": "0.0.2",
+    "publisher": "glaucus-pocus",
+    "homepage": "https://github.com/glaucus-pocus/klasa-vscode.git#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/glaucus-pocus/klasa-vscode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/glaucus-pocus/klasa-vscode/issues"
+    },
     "engines": {
+        "node": ">=8.1.0",
         "vscode": "^1.15.0"
     },
+    "keywords": [
+        "klasa"
+    ],
     "categories": [
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "workspaceContains:klasa.js",
+        "onCommand:klasa.newPiece",
+        "onCommand:klasa.init"
     ],
-    "main": "./extension",
     "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./src/snippets/klasa.json"
+            }
+        ],
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "klasa.newPiece",
+                "title": "Klasa: Create new piece"
+            },
+            {
+                "command": "klasa.init",
+                "title": "Klasa: Initialize new bot"
             }
         ]
     },
+    "main": "./src/extension",
+    "icon": "./assets/klasa.gif",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
@@ -33,5 +58,8 @@
         "eslint": "^4.6.1",
         "@types/node": "^8.0.26",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "fs-extra": "^4.0.2"
     }
 }
