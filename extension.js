@@ -77,20 +77,26 @@ exports.activate = async function (context) {
 	});
 
 	const init = commands.registerCommand('klasa.init', async () => {
-		const items = [
+		const source = await window.showQuickPick([
 			{ label: 'klasa', description: 'From NPM Package' },
 			{ label: 'dirigeants/klasa', description: 'From Github repository' }
-		];
-		const source = await window.showQuickPick(items, { placeHolder: 'Select source:' });
+		], { placeHolder: 'Select source:' });
 
 		if (!source) return;
+
+		const { label: mainPath } = await window.showQuickPick([
+			{ label: 'src/', description: 'Put the code in a subfolder' },
+			{ label: './', description: 'Keep the code in the root folder' }
+		], { placeHolder: 'Select sources folder:' });
 		const terminal = window.createTerminal('Klasa');
 
 		terminal.show();
 		terminal.sendText('npm init -y');
 		terminal.sendText(`npm i ${source.label}`);
 
-		const entryFilePath = resolve(workspace.rootPath, 'klasa.js');
+		let entryFilePath = join(mainPath, 'klasa.js');
+		entryFilePath = resolve(workspace.rootPath, entryFilePath);
+		console.log(entryFilePath);
 		if (!await fs.pathExists(entryFilePath)) {
 			await fs.ensureFile(entryFilePath);
 			const textDocument = await workspace.openTextDocument(Uri.file(entryFilePath));
