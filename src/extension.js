@@ -19,7 +19,7 @@ class Extension {
 	}
 
 	static deactivate() {
-		// commands are already disposed because it's loaded in context.subscriptions
+		// commands are already disposed because it's loaded in context.subscriptions...
 	}
 
 }
