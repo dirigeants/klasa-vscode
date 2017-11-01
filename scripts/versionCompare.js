@@ -1,4 +1,4 @@
-const [, , oldVer, newVer] = process.argv;
+const [, , newVer, oldVer] = process.argv;
 const versionSignature = /^(\d+)\.(\d+)\.(\d+)$/;
 
 if (!oldVer || !newVer || !versionSignature.test(oldVer) || !versionSignature.test(newVer)) {
