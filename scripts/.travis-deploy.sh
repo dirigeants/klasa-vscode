@@ -3,7 +3,7 @@
 
 set -e
 
-if [ "$TRAVIS_BRANCH" != "stable" -o -n "$TRAVIS_TAG" -o "$TRAVIS_PULL_REQUEST" != "false" ]; then
+if [ "$TRAVIS_BRANCH" != "stable" -o -n "$TRAVIS_TAG" ]; then
   echo -e "Not publishing for a non stable branch push."
   exit 0
 fi
