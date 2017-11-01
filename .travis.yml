@@ -5,7 +5,7 @@ install: npm install
 jobs:
   include:
     - stage: test
-      script: npm lint
+      script: npm run lint
     - stage: deploy
       script: bash ./scripts/.travis-deploy.sh
 cache:
