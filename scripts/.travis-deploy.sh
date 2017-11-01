@@ -24,5 +24,4 @@ echo -e "Publishing for a stable branch push."
 
 node ./scripts/versionCompare.js $NEW_PACKAGE_VERSION $OLD_PACKAGE_VERSION
 
-echo -e "Had this script been ready, this would have published"
-#npx vsce publish -p "${PUBLISH_TOKEN}"
+npx vsce publish -p "${PUBLISH_TOKEN}"
