@@ -3,7 +3,7 @@
 
 set -e
 
-if [ "$TRAVIS_BRANCH" != "stable" -o -n "$TRAVIS_TAG" -o "$TRAVIS_PULL_REQUEST" != "false" ]; then
+if [ "$TRAVIS_BRANCH" != "stable" -o -n "$TRAVIS_TAG" ]; then
   echo -e "Not publishing for a non stable branch push."
   exit 0
 fi
@@ -14,7 +14,7 @@ git clone $REPO dist -b $TARGET_BRANCH
 NEW_PACKAGE_VERSION=$(node -p "require('./package.json').version")
 OLD_PACKAGE_VERSION=$(node -p "require('./dist/package.json').version")
 
-if [ "$TRAVIS_BRANCH" == "stable" -a "$TRAVIS_PULL_REQUEST" == "true" ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   echo -e "stable pr - checking semvar without publishing."
   node ./scripts/versionCompare.js $NEW_PACKAGE_VERSION $OLD_PACKAGE_VERSION
   exit 0
