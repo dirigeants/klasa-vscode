@@ -14,12 +14,11 @@ module.exports = class extends Command {
 		if (!repo) throw undefined;
 		const terminal = window.createTerminal('Klasa');
 
+		await this.createFile(resolve(workspace.rootPath, 'app.js'), 'entry file');
+
 		terminal.show();
 		terminal.sendText('npm init -y');
-		terminal.sendText(`npm i ${repo}`);
-
-		const entryFilePath = resolve(workspace.rootPath, 'app.js');
-		return this.createFile(entryFilePath, 'entry file');
+		terminal.sendText(`npm i hydrabolt/discord.js ${repo}`);
 	}
 
 };
