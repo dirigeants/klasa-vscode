@@ -11,6 +11,7 @@ class Command {
 		this.location = location;
 		this.name = `klasa.${options.name || basename(this.location, '.js')}`;
 		this._baseDir = null;
+		this._coreDir = null;
 	}
 
 	get baseDir() {
@@ -22,6 +23,18 @@ class Command {
 			this._baseDir = workspace.rootPath;
 		}
 		return this._baseDir;
+	}
+
+	get coreDir() {
+		if (this._coreDir) return this._coreDir;
+		try {
+			const klasaDir = join(workspace.rootPath, 'node_modules', 'klasa');
+			const { main } = require(resolve(klasaDir, 'package.json'));
+			this._coreDir = join(klasaDir, dirname(main));
+		} catch (err) {
+			this._coreDir = null;
+		}
+		return this._coreDir;
 	}
 
 	_run() {
