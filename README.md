@@ -7,8 +7,8 @@ Toolkit for Klasa Discord Bot development.
 
 ## Commands
 
-`Klasa: Initialize new bot` initializes a new bot.
-`Klasa: Create new piece` creates a new klasa piece from the included snippets.
+- `Klasa: Initialize new bot` initializes a new bot.
+- `Klasa: Create new piece` creates a new klasa piece from the included snippets.
 
 ## Snippets
 
