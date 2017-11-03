@@ -32,9 +32,9 @@ module.exports = class extends Command {
 
 		if (!piece) throw 'Aborted command transfer';
 		piecePath.push(piece);
-		return fs.statSync(resolve(...piecePath)).isDirectory()
-			? this.getPiece(piecePath)
-			: piecePath;
+		return fs.statSync(resolve(...piecePath)).isDirectory() ?
+			this.getPiece(piecePath) :
+			piecePath;
 	}
 
 };
