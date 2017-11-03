@@ -25,7 +25,8 @@
     "activationEvents": [
         "workspaceContains:klasa.js",
         "onCommand:klasa.newPiece",
-        "onCommand:klasa.init"
+        "onCommand:klasa.init",
+        "onCommand:klasa.transfer"
     ],
     "contributes": {
         "snippets": [
@@ -42,6 +43,10 @@
             {
                 "command": "klasa.init",
                 "title": "Klasa: Initialize new bot"
+            },
+            {
+                "command": "klasa.transfer",
+                "title": "Klasa: Transfers a core piece to its respective folder"
             }
         ]
     },
