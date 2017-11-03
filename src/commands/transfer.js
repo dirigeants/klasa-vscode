@@ -18,9 +18,7 @@ module.exports = class extends Command {
 		if (!pieceType) throw undefined;
 
 		const fromPath = await this.getPiece([this.coreDir, `${pieceType.toLowerCase()}s`]);
-		const toPath = [this.baseDir, ...fromPath.slice(1)];
-
-		return fs.copy(resolve(...fromPath), resolve(...toPath));
+		return fs.copy(resolve(...fromPath), resolve(this.baseDir, ...fromPath.slice(1)));
 	}
 
 	async getPiece(piecePath) {
@@ -34,10 +32,9 @@ module.exports = class extends Command {
 
 		if (!piece) throw 'Aborted command transfer';
 		piecePath.push(piece);
-		if (fs.statSync(resolve(...piecePath)).isDirectory()) {
-			return this.getPiece(piecePath);
-		}
-		return piecePath;
+		return fs.statSync(resolve(...piecePath)).isDirectory()
+			? this.getPiece(piecePath)
+			: piecePath;
 	}
 
 };
