@@ -31,7 +31,7 @@ module.exports = class extends Command {
 			placeHolder: `Choose piece to transfer`,
 			ignoreFocusOut: true
 		});
-		
+
 		if (!piece) throw 'Aborted command transfer';
 		piecePath.push(piece);
 		if (fs.statSync(resolve(...piecePath)).isDirectory()) {
