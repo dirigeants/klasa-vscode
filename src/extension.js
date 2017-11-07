@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { join } = require('path');
-const { commands, window, Disposable } = require('vscode');
+const { commands, Disposable } = require('vscode');
 
 class Extension {
 
@@ -23,7 +23,7 @@ class Extension {
 			const loc = join(__dirname, 'events', eventLoc);
 			try {
 				const event = new (require(loc))(context, loc);
-				window[eventLoc](event._run, event, subscriptions);
+				event.container[event.name](event._run, event, subscriptions);
 			} catch (err) {
 				const error = err.message.endsWith('not a constructor') ? new TypeError(`Exported Structure Not A Class`) : err;
 				console.error(`${error}: ${loc}`);
