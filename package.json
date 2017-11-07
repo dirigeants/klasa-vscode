@@ -46,7 +46,7 @@
             },
             {
                 "command": "klasa.transfer",
-                "title": "Klasa: Transfers a core piece to its respective folder"
+                "title": "Klasa: Transfer a core piece"
             }
         ]
     },
