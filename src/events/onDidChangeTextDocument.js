@@ -6,7 +6,7 @@ const { Event } = require('../lib');
 module.exports = class extends Event {
 
 	constructor(...args) {
-		super(...args, { container: workspace });
+		super(...args, { emitter: workspace });
 	}
 
 	async run({ document: fileName }) {

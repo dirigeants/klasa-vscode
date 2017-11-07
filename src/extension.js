@@ -5,7 +5,7 @@ const { commands, Disposable } = require('vscode');
 class Extension {
 
 	static async activate(context) {
-		let subscriptions = [];
+		const subscriptions = [];
 
 		const cmds = await fs.readdir(join(__dirname, 'commands'));
 		for (const cmdLoc of cmds) {
@@ -23,7 +23,7 @@ class Extension {
 			const loc = join(__dirname, 'events', eventLoc);
 			try {
 				const event = new (require(loc))(context, loc);
-				event.container[event.name](event._run, event, subscriptions);
+				event.emitter[event.name](event._run, event, subscriptions);
 			} catch (err) {
 				const error = err.message.endsWith('not a constructor') ? new TypeError(`Exported Structure Not A Class`) : err;
 				console.error(`${error}: ${loc}`);

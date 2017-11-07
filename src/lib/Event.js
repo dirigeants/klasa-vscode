@@ -7,7 +7,7 @@ class Event {
 		this.context = context;
 		this.location = location;
 		this.name = options.name || basename(this.location, '.js');
-		this.container = options.container;
+		this.emitter = options.emitter;
 	}
 
 	_run(...args) {
