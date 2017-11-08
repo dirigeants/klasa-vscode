@@ -9,7 +9,7 @@ module.exports = class extends Event {
 		super(...args, { emitter: workspace });
 	}
 
-	async run({ document: fileName }) {
+	async run({ document: { fileName } }) {
 		const fn = resolve(workspace.rootPath, 'package.json');
 		if (fileName !== fn) return undefined;
 		return delete require.cache[require.resolve(fn)];
