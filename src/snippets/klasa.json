@@ -288,7 +288,7 @@
             "",
             "const client = new klasa.Client({",
             "    clientOptions: {",
-            "        apiRequestMethod: '${1|sequential,burst|}'",
+            "        apiRequestMethod: '${1|sequential,burst|}',",
             "        fetchAllMembers: ${2|false,true|}",
             "    },",
             "    prefix: '${3:+}',",
