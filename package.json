@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.0.14",
+    "version": "0.1.0",
     "publisher": "bdistin",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {
@@ -25,7 +25,8 @@
     "activationEvents": [
         "workspaceContains:klasa.js",
         "onCommand:klasa.newPiece",
-        "onCommand:klasa.init"
+        "onCommand:klasa.init",
+        "onCommand:klasa.transfer"
     ],
     "contributes": {
         "snippets": [
@@ -42,6 +43,10 @@
             {
                 "command": "klasa.init",
                 "title": "Klasa: Initialize new bot"
+            },
+            {
+                "command": "klasa.transfer",
+                "title": "Klasa: Transfer a core piece"
             }
         ]
     },

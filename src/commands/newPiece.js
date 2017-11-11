@@ -6,16 +6,11 @@ const { Command, eventStore } = require('../lib');
 
 module.exports = class extends Command {
 
-	constructor(...args) {
-		super(...args);
-		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
-	}
-
-	async run() {
+	async run(mainDir, baseDir) {
 		const pieceType = await window.showQuickPick(this.pieceTypes, { placeHolder: 'Select piece type:' });
 		if (!pieceType) throw undefined;
 
-		let piecePath = [this.baseDir, `${pieceType.toLowerCase()}s`];
+		let piecePath = [baseDir, `${pieceType.toLowerCase()}s`];
 		if (pieceType === 'Event') return this.event(piecePath);
 		if (pieceType === 'Command') piecePath = await this.command(piecePath);
 

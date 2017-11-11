@@ -9,6 +9,7 @@ Toolkit for Klasa Discord Bot development.
 
 - `Klasa: Initialize new bot` initializes a new bot.
 - `Klasa: Create new piece` creates a new klasa piece from the included snippets.
+- `Klasa: Transfer a core piece` transfers a core piece to its respective folder.
 
 ## Snippets
 
