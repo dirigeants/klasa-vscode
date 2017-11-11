@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { window } = require('vscode');
-const { resolve } = require('path');
+const { resolve, sep } = require('path');
 
 const { Command } = require('../lib');
 
@@ -12,8 +12,10 @@ module.exports = class extends Command {
 		const pieceType = await window.showQuickPick(this.pieceTypes, { placeHolder: 'Select piece type:' });
 		if (!pieceType) throw undefined;
 
-		const fromPath = await this.getPiece([coreDir, `${pieceType.toLowerCase()}s`]);
-		return fs.copy(resolve(...fromPath), resolve(baseDir, ...fromPath.slice(1)));
+		const [, ...fromPath] = await this.getPiece([coreDir, `${pieceType.toLowerCase()}s`]);
+		if (await fs.pathExists(resolve(baseDir, ...fromPath))) throw `${fromPath.join(sep)} already exists in your bot files. Aborting.`;
+
+		return fs.copy(resolve(coreDir, ...fromPath), resolve(baseDir, ...fromPath));
 	}
 
 	async getPiece(piecePath) {
