@@ -63,7 +63,7 @@
         "prefix": "klasaEvent",
         "description": "Create new Klasa event"
     },
-    "Create new Klasa Extendable": {
+    "Create new Klasa extendable": {
         "body": [
             "const { Extendable } = require('klasa');",
             "",
