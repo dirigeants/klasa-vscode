@@ -12,7 +12,7 @@ module.exports = class extends Command {
 	}
 
 	async run(mainDir, baseDir, coreDir) {
-		if (await fs.pathExists(coreDir)) throw 'You must have installed klasa.';
+		if (!await fs.pathExists(coreDir)) throw 'You must have installed klasa.';
 
 		const pieceType = await window.showQuickPick(this.pieceTypes, { placeHolder: 'Select piece type:' });
 		if (!pieceType) throw undefined;
