@@ -13,6 +13,8 @@ if (!oldVer || !newVer || !versionSignature.test(oldVer) || !versionSignature.te
 			console.error('oldversion is < to newversion');
 			process.exitCode = 1;
 			break;
+		} else if (newSplit[i] > oldSplit[i]) {
+			break;
 		}
 	}
 
