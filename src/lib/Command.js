@@ -10,6 +10,7 @@ class Command {
 		this.context = context;
 		this.location = location;
 		this.name = `klasa.${options.name || basename(this.location, '.js')}`;
+		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
 	}
 
 

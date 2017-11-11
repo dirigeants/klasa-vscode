@@ -6,11 +6,6 @@ const { Command } = require('../lib');
 
 module.exports = class extends Command {
 
-	constructor(...args) {
-		super(...args);
-		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
-	}
-
 	async run(mainDir, baseDir, coreDir) {
 		if (!await fs.pathExists(coreDir)) throw 'You must have installed klasa.';
 
