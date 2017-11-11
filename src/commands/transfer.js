@@ -11,14 +11,14 @@ module.exports = class extends Command {
 		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
 	}
 
-	async run() {
-		if (!this.coreDir) return window.showErrorMessage('You must have installed klasa.');
+	async run(mainDir, baseDir, coreDir) {
+		if (await fs.pathExists(coreDir)) throw 'You must have installed klasa.';
 
 		const pieceType = await window.showQuickPick(this.pieceTypes, { placeHolder: 'Select piece type:' });
 		if (!pieceType) throw undefined;
 
-		const fromPath = await this.getPiece([this.coreDir, `${pieceType.toLowerCase()}s`]);
-		return fs.copy(resolve(...fromPath), resolve(this.baseDir, ...fromPath.slice(1)));
+		const fromPath = await this.getPiece([coreDir, `${pieceType.toLowerCase()}s`]);
+		return fs.copy(resolve(...fromPath), resolve(baseDir, ...fromPath.slice(1)));
 	}
 
 	async getPiece(piecePath) {
