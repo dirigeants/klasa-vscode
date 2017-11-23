@@ -284,9 +284,9 @@
     },
     "Create new Klasa entry file": {
         "body": [
-            "const klasa = require('klasa');",
+            "const { Client } = require('klasa');",
             "",
-            "const client = new klasa.Client({",
+            "new Client({",
             "    clientOptions: {",
             "        apiRequestMethod: '${1|sequential,burst|}',",
             "        fetchAllMembers: ${2|false,true|}",
@@ -298,9 +298,7 @@
             "    typing: ${7|true,false|},",
             "    quotedStringSupport: ${8|false,true|},",
             "    readyMessage: (client) => `${client.user.tag}, Ready to serve ${client.guilds.size} guilds and ${client.users.size} users`",
-            "});",
-            "",
-            "client.login('${9:your-bot-token}');",
+            "}).login('${9:your-bot-token}');",
             ""
         ],
         "prefix": "klasaIndex",
