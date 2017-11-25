@@ -184,6 +184,7 @@
             "            enabled: ${1|true,false|},",
             "            ignoreBots: ${2|true,false|},",
             "            ignoreSelf: ${3|true,false|}",
+	    "		 ignoreOthers: ${4|true, false|}"
             "        });",
             "    }",
             "",
