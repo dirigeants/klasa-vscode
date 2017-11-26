@@ -202,7 +202,7 @@
         ],
         "prefix": "klasaMonitor",
         "description": "Create new Klasa monitor"
-	},
+    },
 	"Create new Klasa provider": {
         "body": [
             "const { Provider } = require('klasa');",
