@@ -184,7 +184,7 @@
             "            enabled: ${1|true,false|},",
             "            ignoreBots: ${2|true,false|},",
             "            ignoreSelf: ${3|true,false|}",
-	    "		 ignoreOthers: ${4|true, false|} // 0.4.0-dev only"
+            "		 ignoreOthers: ${4|true, false|} // 0.4.0-dev only",
             "        });",
             "    }",
             "",
@@ -202,8 +202,8 @@
         ],
         "prefix": "klasaMonitor",
         "description": "Create new Klasa monitor"
-	},
-	"Create new Klasa provider": {
+    },
+    "Create new Klasa provider": {
         "body": [
             "const { Provider } = require('klasa');",
             "",
