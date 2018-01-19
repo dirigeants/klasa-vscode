@@ -19,7 +19,7 @@ module.exports = class extends Command {
 		terminal.show();
 		terminal.sendText(`cd "${mainDir}"`);
 		terminal.sendText('npm init -y');
-		terminal.sendText(`npm i hydrabolt/discord.js ${repo}`);
+		terminal.sendText(`npm i discordjs/discord.js ${repo}`);
 	}
 
 };
