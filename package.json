@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.1.8",
+    "version": "0.2.0",
     "publisher": "bdistin",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {
@@ -32,7 +32,7 @@
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./src/snippets/klasa.json"
+                "path": "./src/snippets/index.js"
             }
         ],
         "commands": [
@@ -54,8 +54,7 @@
     "icon": "assets/klasa.gif",
     "scripts": {
         "lint": "npx eslint src",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
         "@types/mocha": "^2.2.42",

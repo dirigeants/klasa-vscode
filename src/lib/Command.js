@@ -2,7 +2,7 @@ const { dirname, resolve, basename } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
 const fs = require('fs-extra');
 
-const snippets = require('../snippets/klasa.json');
+const snippets = require('../snippets/index.js');
 
 class Command {
 
@@ -10,7 +10,7 @@ class Command {
 		this.context = context;
 		this.location = location;
 		this.name = `klasa.${options.name || basename(this.location, '.js')}`;
-		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
+		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider', 'Task'];
 	}
 
 
