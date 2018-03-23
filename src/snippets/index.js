@@ -37,7 +37,7 @@ module.exports = {
 	'Create new Klasa extendable': new Snippet('./klasaExtendable.js', [
 		'${1|true,false|}',
 		'${2|false,true|}',
-		'$3'
+		'$3',
 		'${4|,get ,set |}'
 	]),
 
