@@ -3,11 +3,7 @@ const { Provider } = require('klasa');
 module.exports = class extends Provider {
 
 	constructor(...args) {
-		super(...args, {
-			enabled: $1,
-			sql: $2,
-			description: '$3'
-		});
+		super(...args, { enabled: $1 });
 	}
 
 	init() {

@@ -4,7 +4,7 @@ const path = require('path');
 class Snippet {
 
 	constructor(loc, fields) {
-		loc = path.resolve(__dirname, loc);
+		loc = path.resolve(__dirname, 'templates', loc);
 		const file = fs.readFileSync(loc, 'utf8');
 		this.prefix = path.basename(loc);
 		this.body = this.constructor.replaceFields(file, fields).split('\n');
@@ -19,7 +19,7 @@ class Snippet {
 
 module.exports = {
 
-	'Create new Klasa command': new Snippet('./klasaCommand.js', [
+	'Create new Klasa command': new Snippet('klasaCommand.js', [
 		'${1|true,false|}',
 		'${2:0}',
 		'$3',
@@ -30,32 +30,32 @@ module.exports = {
 		"'${8:No extended help available.}'"
 	]),
 
-	'Create new Klasa event': new Snippet('./klasaEvent.js', [
+	'Create new Klasa event': new Snippet('klasaEvent.js', [
 		'${1|true,false|}'
 	]),
 
-	'Create new Klasa extendable': new Snippet('./klasaExtendable.js', [
+	'Create new Klasa extendable': new Snippet('klasaExtendable.js', [
 		'${1|true,false|}',
 		'${2|false,true|}',
 		'$3',
 		'${4|,get ,set |}'
 	]),
 
-	'Create new Klasa finalizer': new Snippet('./klasaFinalizer.js', [
+	'Create new Klasa finalizer': new Snippet('klasaFinalizer.js', [
 		'${1|true,false|}'
 	]),
 
-	'Create new Klasa inhibitor': new Snippet('./klasaInhibitor.js', [
+	'Create new Klasa inhibitor': new Snippet('klasaInhibitor.js', [
 		'${1|true,false|}',
 		'${2|false,true|}'
 	]),
 
-	'Create new Klasa language': new Snippet('./klasaLanguage.js', [
+	'Create new Klasa language': new Snippet('klasaLanguage.js', [
 		'${1|true,false|}',
 		'${2:${TM_FILENAME_BASE:yourLanguageName}}'
 	]),
 
-	'Create new Klasa monitor': new Snippet('./klasaMonitor.js', [
+	'Create new Klasa monitor': new Snippet('klasaMonitor.js', [
 		'${1|true,false|}',
 		'${2|true,false|}',
 		'${3|true,false|}',
@@ -63,17 +63,15 @@ module.exports = {
 		'${5|true,false|}'
 	]),
 
-	'Create new Klasa provider': new Snippet('./klasaProvider.js', [
-		'${1|true,false|}',
-		'${2|true,false|}',
-		'$3'
-	]),
-
-	'Create new Klasa task': new Snippet('./klasaTask.js', [
+	'Create new Klasa provider': new Snippet('klasaProvider.js', [
 		'${1|true,false|}'
 	]),
 
-	'Create new Klasa entry file': new Snippet('./klasaIndex.js', [
+	'Create new Klasa task': new Snippet('klasaTask.js', [
+		'${1|true,false|}'
+	]),
+
+	'Create new Klasa entry file': new Snippet('klasaIndex.js', [
 		'${1|sequential,burst|}',
 		'${2|false,true|}',
 		'${3:+}',
