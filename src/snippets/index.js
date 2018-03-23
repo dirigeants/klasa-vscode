@@ -21,23 +21,33 @@ module.exports = {
 
 	'Create new Klasa command': new Snippet('klasaCommand.js', [
 		'${1|true,false|}',
-		'${2:0}',
-		'$3',
-		'${4|0,1,2,3,4,5,6,7,8,9,10|}',
-		"'$5'",
-		"'$6'",
-		'${7:undefined}',
-		"'${8:No extended help available.}'"
+		'$2',
+		'${3|true,false|}',
+		'${4:1}',
+		'${5:0}',
+		'${6:0}',
+		'${7:30000}',
+		'${8|false,true|}',
+		'${9|false,true|}',
+		'${10|false,true|}',
+		'${11|0,1,2,3,4,5,6,7,8,9,10|}',
+		"'$12'",
+		"'${13:No extended help available.}'",
+		"'$14'",
+		'${15:undefined}',
+		'${16|false,true|}',
+		'${17|false,true|}'
 	]),
 
 	'Create new Klasa event': new Snippet('klasaEvent.js', [
-		'${1|true,false|}'
+		'${1|true,false|}',
+		'${4|false,true|}'
 	]),
 
 	'Create new Klasa extendable': new Snippet('klasaExtendable.js', [
 		'${1|true,false|}',
-		'${2|false,true|}',
-		'$3',
+		'$2',
+		'${3|false,true|}',
 		'${4|,get ,set |}'
 	]),
 
@@ -60,7 +70,8 @@ module.exports = {
 		'${2|true,false|}',
 		'${3|true,false|}',
 		'${4|true,false|}',
-		'${5|true,false|}'
+		'${5|true,false|}',
+		'${6|true,false|}'
 	]),
 
 	'Create new Klasa provider': new Snippet('klasaProvider.js', [

@@ -5,8 +5,8 @@ module.exports = class extends Extendable {
 	constructor(...args) {
 		super(...args, {
 			enabled: $1,
-			klasa: $2,
-			appliesTo: [$3]
+			appliesTo: [$2],
+			klasa: $3
 		});
 	}
 

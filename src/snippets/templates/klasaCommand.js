@@ -6,15 +6,24 @@ module.exports = class extends Command {
 		super(...args, {
 			enabled: $1,
 			runIn: ['text', 'dm', 'group'],
-			cooldown: $2,
-			aliases: [$3],
-			permLevel: $4,
 			botPerms: [],
 			requiredSettings: [],
-			description: $5,
-			usage: $6,
-			usageDelim: $7,
-			extendedHelp: $8
+			aliases: [$2],
+			autoAliases: $3,
+			bucket: $4,
+			cooldown: $5,
+			promptLimit: $6,
+			promptTime: $7,
+			deletable: $8,
+			guarded: $9,
+			nsfw: $10,
+			permLevel: $11,
+			description: $12,
+			extendedHelp: $13,
+			usage: $14,
+			usageDelim: $15,
+			quotedStringSupport: $16,
+			subcommands: $17
 		});
 	}
 
@@ -24,7 +33,10 @@ module.exports = class extends Command {
 	}
 
 	async init() {
-		// You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)
+		/*
+         * You can optionally define this method which will be run when the bot starts
+         * (after login, so discord data is available via this.client)
+         */
 	}
 
 };

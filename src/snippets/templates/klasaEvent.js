@@ -3,7 +3,10 @@ const { Event } = require('klasa');
 module.exports = class extends Event {
 
 	constructor(...args) {
-		super(...args, { enabled: $1 });
+		super(...args, {
+			enabled: $1,
+			once: $2
+		});
 	}
 
 	async run(...params) {
@@ -12,7 +15,10 @@ module.exports = class extends Event {
 	}
 
 	async init() {
-		// You can optionally define this method which will be run when the bot starts (after login, so discord data is available via this.client)
+		/*
+         * You can optionally define this method which will be run when the bot starts
+         * (after login, so discord data is available via this.client)
+         */
 	}
 
 };
