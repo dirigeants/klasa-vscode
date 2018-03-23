@@ -6,7 +6,7 @@ module.exports = class extends Event {
 		super(...args, { enabled: $1 });
 	}
 
-	run(...params) {
+	async run(...params) {
 		// This is where you place the code you want to run for your event
 		$0;
 	}

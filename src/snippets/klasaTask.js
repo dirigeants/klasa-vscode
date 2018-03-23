@@ -6,7 +6,7 @@ module.exports = class extends Task {
 		super(...args, { enabled: $1 });
 	}
 
-	run(data) {
+	async run(data) {
 		// This is where you place the code you want to run for your task
 		$0;
 	}

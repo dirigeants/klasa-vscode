@@ -12,7 +12,7 @@ module.exports = class extends Monitor {
 		});
 	}
 
-	run(msg) {
+	async run(msg) {
 		// This is where you place the code you want to run for your monitor
 		$0;
 	}
