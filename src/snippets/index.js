@@ -6,7 +6,7 @@ class Snippet {
 	constructor(loc, fields) {
 		loc = path.resolve(__dirname, 'templates', loc);
 		const file = fs.readFileSync(loc, 'utf8');
-		this.prefix = path.basename(loc);
+		this.prefix = path.basename(loc, '.js');
 		this.body = this.constructor.replaceFields(file, fields).split('\n');
 	}
 

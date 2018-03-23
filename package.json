@@ -47,6 +47,10 @@
             {
                 "command": "klasa.transfer",
                 "title": "Klasa: Transfer a core piece"
+            },
+            {
+                "command": "klasa.download",
+                "title": "Klasa: Download a pre-built Provider"
             }
         ]
     },
@@ -67,6 +71,7 @@
         "vscode": "^1.1.5"
     },
     "dependencies": {
-        "fs-extra": "^4.0.2"
+        "fs-extra": "^4.0.2",
+        "snekfetch": "^3.6.4"
     }
 }
