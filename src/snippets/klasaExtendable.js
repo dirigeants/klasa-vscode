@@ -3,13 +3,14 @@ const { Extendable } = require('klasa');
 module.exports = class extends Extendable {
 
 	constructor(...args) {
-		super(...args, ['Message'], {
+		super(...args, {
 			enabled: $1,
-			klasa: $2
+			klasa: $2,
+			appliesTo: [$3]
 		});
 	}
 
-	$2extend() {
+	$4extend() {
 		// `this` refers to the parent class, and not this one. You cannot use super
 		$0;
 	}
