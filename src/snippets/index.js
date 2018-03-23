@@ -48,7 +48,7 @@ module.exports = {
 		'${1|true,false|}',
 		'$2',
 		'${3|false,true|}',
-		'${4|,get ,set |}'
+		'${4|,get ,set ,async ,static ,static async |}'
 	]),
 
 	'Create new Klasa finalizer': new Snippet('klasaFinalizer.js', [

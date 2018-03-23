@@ -3,6 +3,9 @@ const { Language } = require('klasa');
 module.exports = class extends Language {
 
 	constructor(...args) {
+		/**
+		 * Any default options can be omitted completely.
+		 */
 		super(...args, { enabled: $1 });
 
 		this.language = {

@@ -3,6 +3,10 @@ const { Provider } = require('klasa');
 module.exports = class extends Provider {
 
 	constructor(...args) {
+		/**
+		 * Any default options can be omitted completely.
+		 * if all options are default, you can omit the constructor completely
+		 */
 		super(...args, { enabled: $1 });
 	}
 
