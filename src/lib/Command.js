@@ -2,7 +2,7 @@ const { dirname, resolve, basename } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
 const fs = require('fs-extra');
 
-const snippets = require('../snippets/klasa.json');
+const snippets = require('../snippets/index.js');
 
 class Command {
 
@@ -10,7 +10,7 @@ class Command {
 		this.context = context;
 		this.location = location;
 		this.name = `klasa.${options.name || basename(this.location, '.js')}`;
-		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider'];
+		this.pieceTypes = ['Command', 'Event', 'Extendable', 'Finalizer', 'Inhibitor', 'Language', 'Monitor', 'Provider', 'Task'];
 	}
 
 
@@ -47,7 +47,8 @@ class Command {
 		await fs.createFile(path);
 		const textDocument = await workspace.openTextDocument(Uri.file(path));
 		const editor = await window.showTextDocument(textDocument);
-		return editor.insertSnippet(this.generateSnippet(type, options));
+		await editor.insertSnippet(this.generateSnippet(type, options));
+		return editor;
 	}
 
 	generateSnippet(type, event) {
@@ -62,7 +63,7 @@ class Command {
 			const { main } = require(resolve(workspaceFolder.uri.fsPath, 'package.json'));
 			baseDir = resolve(workspaceFolder.uri.fsPath, dirname(main));
 		} catch (err) {
-			baseDir = workspaceFolder.uri.fsPath;
+			baseDir = resolve(workspaceFolder.uri.fsPath, 'src');
 		}
 		return [workspaceFolder.uri.fsPath, baseDir, resolve(workspaceFolder.uri.fsPath, 'node_modules', 'klasa', 'src')];
 	}

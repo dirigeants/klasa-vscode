@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.1.8",
+    "version": "0.2.0",
     "publisher": "bdistin",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {
@@ -32,7 +32,7 @@
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./src/snippets/klasa.json"
+                "path": "./src/snippets/index.js"
             }
         ],
         "commands": [
@@ -47,6 +47,10 @@
             {
                 "command": "klasa.transfer",
                 "title": "Klasa: Transfer a core piece"
+            },
+            {
+                "command": "klasa.download",
+                "title": "Klasa: Download a pre-built Provider"
             }
         ]
     },
@@ -54,19 +58,20 @@
     "icon": "assets/klasa.gif",
     "scripts": {
         "lint": "npx eslint src",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
-        "typescript": "^2.5.2",
-        "vscode": "^1.1.5",
-        "mocha": "^3.5.0",
-        "eslint": "^4.6.1",
-        "vsce": "^1.32.0",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^8.0.26",
-        "@types/mocha": "^2.2.42"
+        "eslint": "^4.17.0",
+        "eslint-config-klasa": "github:dirigeants/klasa-lint",
+        "mocha": "^3.5.0",
+        "typescript": "^2.5.2",
+        "vsce": "^1.32.0",
+        "vscode": "^1.1.5"
     },
     "dependencies": {
-        "fs-extra": "^4.0.2"
+        "fs-extra": "^4.0.2",
+        "snekfetch": "^3.6.4"
     }
 }
