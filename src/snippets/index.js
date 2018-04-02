@@ -84,16 +84,7 @@ module.exports = {
 
 	'Create new Klasa ignore file': new Snippet('.gitignore', []),
 
-	'Create new Klasa config file': new Snippet('klasaConfig.js', [
-		'${1|sequential,burst|}',
-		'${2|false,true|}',
-		'${3:+}',
-		'${4|true,false|}',
-		'${5|false,true|}',
-		'${6|true,false|}',
-		'${7|true,false|}',
-		'${8|false,true|}'
-	]),
+	'Create new Klasa config file': new Snippet('klasaConfig.js', []),
 
 	'Create new Klasa entry file': new Snippet('klasaIndex.js', [])
 
