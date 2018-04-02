@@ -47,7 +47,8 @@ class Command {
 		await fs.createFile(path);
 		const textDocument = await workspace.openTextDocument(Uri.file(path));
 		const editor = await window.showTextDocument(textDocument);
-		return editor.insertSnippet(this.generateSnippet(type, options));
+		await editor.insertSnippet(this.generateSnippet(type, options));
+		return editor;
 	}
 
 	generateSnippet(type, event) {
@@ -62,7 +63,7 @@ class Command {
 			const { main } = require(resolve(workspaceFolder.uri.fsPath, 'package.json'));
 			baseDir = resolve(workspaceFolder.uri.fsPath, dirname(main));
 		} catch (err) {
-			baseDir = workspaceFolder.uri.fsPath;
+			baseDir = resolve(workspaceFolder.uri.fsPath, 'src');
 		}
 		return [workspaceFolder.uri.fsPath, baseDir, resolve(workspaceFolder.uri.fsPath, 'node_modules', 'klasa', 'src')];
 	}

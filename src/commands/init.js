@@ -14,7 +14,11 @@ module.exports = class extends Command {
 		if (!repo) throw undefined;
 		const terminal = window.createTerminal('Klasa');
 
-		await this.createFile(resolve(baseDir, 'app.js'), 'entry file');
+		const editor = await this.createFile(resolve(mainDir, '.gitignore'), 'ignore file');
+		await editor.document.save();
+		const editor2 = await this.createFile(resolve(baseDir, 'index.js'), 'entry file');
+		await editor2.document.save();
+		await this.createFile(resolve(baseDir, 'config.js'), 'config file');
 
 		terminal.show();
 		terminal.sendText(`cd "${mainDir}"`);
