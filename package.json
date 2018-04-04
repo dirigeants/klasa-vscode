@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "publisher": "bdistin",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {

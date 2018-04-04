@@ -148,8 +148,6 @@ exports.config = {
 	 * Console Options
 	 */
 	console: {
-		stdout: process.stdout,
-		stderr: process.stderr,
 		// Alternatively a Moment Timestamp string can be provided to customize the timestamps.
 		timestamps: true,
 		utc: false,
