@@ -12,7 +12,7 @@ module.exports = class extends Task {
 
 	async run(data) {
 		// This is where you place the code you want to run for your task
-		$0;
+		$0
 	}
 
 	async init() {
