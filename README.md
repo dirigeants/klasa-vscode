@@ -21,7 +21,8 @@ Toolkit for Klasa Discord Bot development.
  - [x] Languages
  - [x] Monitors
  - [x] Providers
-
+ - [x] Tasks
+ 
 ## Credit
 
 [Pandraghon](https://github.com/Pandraghon): For the initial work/extension
