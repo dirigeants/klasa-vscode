@@ -10,7 +10,7 @@ module.exports = class extends Finalizer {
 		super(...args, { enabled: $1 });
 	}
 
-	async run(msg, mes, runTime) {
+	async run(message, response, runTime) {
 		// This is where you place the code you want to run for your finalizer
 		$0;
 	}
