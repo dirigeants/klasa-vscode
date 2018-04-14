@@ -65,8 +65,8 @@ module.exports = class extends Command {
 		return folderName;
 	}
 
-	getName(pieceType) {
-		const pieceName = window.showInputBox({
+	async getName(pieceType) {
+		const pieceName = await window.showInputBox({
 			prompt: `Enter the name of the ${pieceType}`,
 			placeHolder: 'Name'
 		});

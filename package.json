@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "bdistin",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {
@@ -26,7 +26,8 @@
         "workspaceContains:klasa.js",
         "onCommand:klasa.newPiece",
         "onCommand:klasa.init",
-        "onCommand:klasa.transfer"
+        "onCommand:klasa.transfer",
+        "onCommand:klasa.download"
     ],
     "contributes": {
         "snippets": [
