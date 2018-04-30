@@ -65,12 +65,12 @@
     "devDependencies": {
         "@types/mocha": "^5.2.0",
         "@types/node": "^10.0.0",
-        "eslint": "^4.17.0",
+        "eslint": "^4.19.1",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
         "mocha": "^5.1.1",
-        "typescript": "^2.5.2",
-        "vsce": "^1.32.0",
-        "vscode": "^1.1.5"
+        "typescript": "^2.8.3",
+        "vsce": "^1.39.0",
+        "vscode": "^1.1.16"
     },
     "dependencies": {
         "fs-extra": "^5.0.0",
