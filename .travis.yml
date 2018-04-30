@@ -3,15 +3,15 @@ node_js:
   - "8"
 before_install:
   - npm install -g npm@latest greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
+  - greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
-install: npm install
+install: npm ci
 jobs:
   include:
     - stage: test
       script: npm run lint
     - stage: deploy
       script: bash ./scripts/.travis-deploy.sh
-cache:
-  directories:
-    - node_modules
+#cache:
+#  directories:
+#    - node_modules
