@@ -4,7 +4,7 @@ node_js:
 before_install:  if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then npm install -g greenkeeper-lockfile@1; fi
 before_script: if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then greenkeeper-lockfile-update; fi
 after_script: if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then greenkeeper-lockfile-upload; fi
-install: if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then npm install; fi
+install: npm install
 jobs:
   include:
     - stage: test
