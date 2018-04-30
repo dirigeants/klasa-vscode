@@ -4,6 +4,7 @@
     "description": "Klasa extension for VS Code",
     "version": "0.2.3",
     "publisher": "bdistin",
+    "license": "MIT",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
     "repository": {
         "type": "git",
