@@ -2,6 +2,7 @@
 
 [![](https://vsmarketplacebadge.apphb.com/version/bdistin.klasa-vscode.svg)](https://marketplace.visualstudio.com/items?itemName=bdistin.klasa-vscode)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a6ed042527b4d5c912b8ec1e375bfc4)](https://www.codacy.com/app/dirigeants/klasa-vscode?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=glaucus-pocus/klasa-vscode&amp;utm_campaign=Badge_Grade)
+[![Greenkeeper badge](https://badges.greenkeeper.io/dirigeants/klasa-vscode.svg)](https://greenkeeper.io/)
 
 Toolkit for Klasa Discord Bot development.
 

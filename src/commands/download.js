@@ -16,7 +16,7 @@ module.exports = class extends Command {
 
 		if (!file) throw undefined;
 
-		const { text } = await request.get(`https://raw.githubusercontent.com/dirigeants/klasa-pieces/master/providers/${file}`);
+		const { body: text } = await request.get(`https://raw.githubusercontent.com/dirigeants/klasa-pieces/master/providers/${file}`);
 		const path = resolve(baseDir, 'providers', file);
 
 		if (await fs.pathExists(path)) throw `${path} already exists!`;
