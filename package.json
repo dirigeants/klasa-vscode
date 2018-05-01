@@ -69,7 +69,7 @@
         "vscode": "^1.1.16"
     },
     "dependencies": {
-        "fs-extra": "^5.0.0",
+        "fs-extra": "^6.0.0",
         "snekfetch": "^4.0.0"
     }
 }
