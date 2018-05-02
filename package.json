@@ -34,7 +34,7 @@
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./src/snippets/index.js"
+                "path": "./build/snippets.json"
             }
         ],
         "commands": [
@@ -60,7 +60,8 @@
     "icon": "assets/klasa.gif",
     "scripts": {
         "lint": "npx eslint src",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "build": "node ./scripts/build"
     },
     "devDependencies": {
         "eslint": "^4.19.1",
