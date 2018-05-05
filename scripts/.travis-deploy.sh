@@ -3,11 +3,12 @@
 
 set -e
 
+npm run build
+
 if [ "$TRAVIS_BRANCH" != "stable" -o -n "$TRAVIS_TAG" ]; then
   echo -e "Not publishing for a non stable branch push."
   exit 0
 fi
-
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   REPO=$(git config remote.origin.url)

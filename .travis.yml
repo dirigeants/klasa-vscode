@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "8"
+before_install:  if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then npm install -g greenkeeper-lockfile@1; fi
+before_script: if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then greenkeeper-lockfile-update; fi
+after_script: if [[ "$TRAVIS_BRANCH" =~ ^greenkeeper\/ ]]; then greenkeeper-lockfile-upload; fi
 install: npm install
 jobs:
   include:
@@ -11,10 +14,3 @@ jobs:
 cache:
   directories:
     - node_modules
-#notifications:
-#  webhooks:
-#    urls:
-#      - https://webhooks.gitter.im/e/0926b82fc22ea0760ede
-#    on_success: always  # options: [always|never|change] default: always
-#    on_failure: always  # options: [always|never|change] default: always
-#    on_start: never     # options: [always|never|change] default: always
