@@ -16,10 +16,12 @@ exports.config = {
 	prefix: '!',
 	// If custom configs should be preserved when a guild removes your bot
 	preserveConfigs: true,
-	// Whether d.js should queue your rest request in 'sequential' or 'burst' mode
-	apiRequestMethod: 'sequential',
 	// If your bot should be able to mention @everyone
 	disableEveryone: false,
+	// Whether d.js should queue your rest request in 'sequential' or 'burst' mode
+	apiRequestMethod: 'sequential',
+	// The time in ms to add to ratelimits, to ensure you wont hit a 429 response
+	restTimeOffset: 500,
 	// Any Websocket Events you don't want to listen to
 	disabledEvents: [],
 	// A presence to login with
@@ -46,8 +48,8 @@ exports.config = {
 	/**
 	 * Command Handler Options
 	 */
-	cmdEditing: false,
-	cmdLogging: false,
+	commandEditing: false,
+	commandLogging: false,
 	typing: false,
 
 	/**
@@ -72,8 +74,8 @@ exports.config = {
 	 * Custom Prompt Defaults
 	 */
 	customPromptDefaults: {
-		promptTime: 30000,
-		promptLimit: Infinity,
+		time: 30000,
+		limit: Infinity,
 		quotedStringSupport: false
 	},
 
@@ -84,17 +86,17 @@ exports.config = {
 		commands: {
 			aliases: [],
 			autoAliases: true,
-			botPerms: 0,
 			bucket: 1,
 			cooldown: 0,
 			description: '',
 			enabled: true,
 			guarded: false,
 			nsfw: false,
-			permLevel: 0,
+			permissionLevel: 0,
 			promptLimit: 0,
 			promptTime: 30000,
 			requiredConfigs: [],
+			requiredPermissions: 0,
 			runIn: ['text', 'dm', 'group'],
 			subcommands: false,
 			usage: '',

@@ -10,7 +10,7 @@ module.exports = class extends Command {
 		super(...args, {
 			enabled: $1,
 			runIn: ['text', 'dm', 'group'],
-			botPerms: [],
+			requiredPermissions: [],
 			requiredSettings: [],
 			aliases: [$2],
 			autoAliases: $3,
@@ -21,7 +21,7 @@ module.exports = class extends Command {
 			deletable: $8,
 			guarded: $9,
 			nsfw: $10,
-			permLevel: $11,
+			permissionLevel: $11,
 			description: $12,
 			extendedHelp: $13,
 			usage: $14,
