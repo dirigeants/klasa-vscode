@@ -12,16 +12,16 @@ module.exports = class extends Provider {
 
 	async init() {
 		/*
-         * You can optionally define this method which will be run when the bot starts
-         * (after login, so discord data is available via this.client)
-         */
+		 * You can optionally define this method which will be run when the bot starts
+		 * (after login, so discord data is available via this.client)
+		 */
 	}
 
 	shutdown() {
 		/*
-         * You can optionally define this method which will be run when the provider is
-         * removed from the ProviderStore.
-         */
+		 * You can optionally define this method which will be run when the provider is
+		 * removed from the ProviderStore.
+		 */
 	}
 
 	hasTable(table) {
