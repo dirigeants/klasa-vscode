@@ -76,4 +76,4 @@ module.exports = class extends Provider {
 		// Delete a record from the database
 	}
 
-};
+}
