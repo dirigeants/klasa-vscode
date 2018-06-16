@@ -22,4 +22,4 @@ module.exports = class extends Finalizer {
          */
 	}
 
-};
+}
