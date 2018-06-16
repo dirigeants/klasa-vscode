@@ -18,4 +18,4 @@ module.exports = class extends Extendable {
 		$0;
 	}
 
-};
+}
