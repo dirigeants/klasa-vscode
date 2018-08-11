@@ -14,8 +14,8 @@ exports.config = {
 	language: 'en-US',
 	// The default configurable prefix for each guild
 	prefix: '!',
-	// If custom configs should be preserved when a guild removes your bot
-	preserveConfigs: true,
+	// If custom settings should be preserved when a guild removes your bot
+	preserveSettings: true,
 	// If your bot should be able to mention @everyone
 	disableEveryone: false,
 	// Whether d.js should queue your rest request in 'sequential' or 'burst' mode
@@ -95,7 +95,7 @@ exports.config = {
 			permissionLevel: 0,
 			promptLimit: 0,
 			promptTime: 30000,
-			requiredConfigs: [],
+			requiredSettings: [],
 			requiredPermissions: 0,
 			runIn: ['text', 'dm', 'group'],
 			subcommands: false,
