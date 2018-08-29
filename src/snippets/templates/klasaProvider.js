@@ -10,12 +10,7 @@ module.exports = class extends Provider {
 		super(...args, { enabled: $1 });
 	}
 
-	async init() {
-		/*
-		 * You can optionally define this method which will be run when the bot starts
-		 * (after login, so discord data is available via this.client)
-		 */
-	}
+
 
 	shutdown() {
 		/*
