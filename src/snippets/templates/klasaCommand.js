@@ -9,7 +9,7 @@ module.exports = class extends Command {
 		 */
 		super(...args, {
 			enabled: $1,
-			runIn: ['text', 'dm', 'group'],
+			runIn: ['text', 'dm'],
 			requiredPermissions: [],
 			requiredSettings: [],
 			aliases: [$2],
