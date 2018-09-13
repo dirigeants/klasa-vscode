@@ -12,7 +12,7 @@ module.exports = class extends Extendable {
 		});
 	}
 
-	$3() {
+	$3$4() {
 		// `this` refers to the parent class, and not this one. You cannot use super.
 		$0;
 	}
