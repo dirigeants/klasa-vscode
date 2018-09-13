@@ -1,6 +1,6 @@
 const { dirname, resolve, basename } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
-const fs = require('fs-extra');
+const fs = require('fs-nextra');
 
 const snippets = require('../../build/snippets.json');
 

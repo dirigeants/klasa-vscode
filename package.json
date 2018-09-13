@@ -2,7 +2,7 @@
     "name": "klasa-vscode",
     "displayName": "klasa-vscode",
     "description": "Klasa extension for VS Code",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "publisher": "bdistin",
     "license": "MIT",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
@@ -64,13 +64,13 @@
         "build": "node ./scripts/build"
     },
     "devDependencies": {
-        "eslint": "^4.19.1",
+        "eslint": "^5.5.0",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
-        "vsce": "^1.40.0"
+        "vsce": "^1.48.0"
     },
     "dependencies": {
-        "vscode": "^1.1.17",
-        "fs-extra": "^6.0.1",
-        "snekfetch": "^4.0.0"
+        "fs-nextra": "^0.3.7",
+        "node-fetch": "^2.2.0",
+        "vscode": "^1.1.21"
     }
 }
