@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+const fs = require('fs-nextra');
 const { window } = require('vscode');
 const { resolve, sep } = require('path');
 

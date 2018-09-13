@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+const fs = require('fs-nextra');
 const { join } = require('path');
 const { commands } = require('vscode');
 

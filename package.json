@@ -69,8 +69,8 @@
         "vsce": "^1.48.0"
     },
     "dependencies": {
-        "vscode": "^1.1.21",
-        "fs-extra": "^6.0.1",
-        "snekfetch": "^4.0.0"
+        "fs-nextra": "^0.3.7",
+        "snekfetch": "^4.0.0",
+        "vscode": "^1.1.21"
     }
 }

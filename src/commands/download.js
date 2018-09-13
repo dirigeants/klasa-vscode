@@ -1,7 +1,7 @@
 const { workspace, window, Uri } = require('vscode');
 const { resolve } = require('path');
 const request = require('snekfetch');
-const fs = require('fs-extra');
+const fs = require('fs-nextra');
 
 const { Command } = require('../lib');
 
