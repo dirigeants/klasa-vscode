@@ -47,8 +47,8 @@ module.exports = {
 	'Create new Klasa extendable': new Snippet('klasaExtendable.js', [
 		'${1|true,false|}',
 		'$2',
-		'${3|false,true|}',
-		'${4|extend,get extend,set extend,async extend,static extend,static async extend|}'
+		'${3|get ,set ,async ,static ,static async |}',
+		'$4'
 	]),
 
 	'Create new Klasa finalizer': new Snippet('klasaFinalizer.js', [
