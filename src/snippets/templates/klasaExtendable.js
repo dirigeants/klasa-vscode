@@ -8,12 +8,11 @@ module.exports = class extends Extendable {
 		 */
 		super(...args, {
 			enabled: $1,
-			appliesTo: [$2],
-			klasa: $3
+			appliesTo: [$2]
 		});
 	}
 
-	$4() {
+	$3() {
 		// `this` refers to the parent class, and not this one. You cannot use super.
 		$0;
 	}
