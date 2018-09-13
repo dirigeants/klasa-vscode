@@ -1,6 +1,6 @@
 const { workspace, window, Uri } = require('vscode');
 const { resolve } = require('path');
-const request = require('snekfetch');
+const fetch = require('node-fetch');
 const fs = require('fs-nextra');
 
 const { Command } = require('../lib');
@@ -8,7 +8,7 @@ const { Command } = require('../lib');
 module.exports = class extends Command {
 
 	async run(mainDir, baseDir) {
-		const { body } = await request.get('https://api.github.com/repos/dirigeants/klasa-pieces/contents/providers');
+		const body = await fetch('https://api.github.com/repos/dirigeants/klasa-pieces/contents/providers').then(res => res.json());
 
 		const { label: file } = await window.showQuickPick(
 			body.map(fl => ({ label: fl.name, description: `Get the ${fl.name.slice(0, -3)} provider.` })),
@@ -16,7 +16,7 @@ module.exports = class extends Command {
 
 		if (!file) throw undefined;
 
-		const { body: text } = await request.get(`https://raw.githubusercontent.com/dirigeants/klasa-pieces/master/providers/${file}`);
+		const text = await fetch(`https://raw.githubusercontent.com/dirigeants/klasa-pieces/master/providers/${file}`).then(res => res.text());
 		const path = resolve(baseDir, 'providers', file);
 
 		if (await fs.pathExists(path)) throw `${path} already exists!`;
