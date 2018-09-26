@@ -39,7 +39,7 @@ module.exports = class extends Command {
 	async getCategory(piecePath) {
 		const category = piecePath.length === 2 ? 'Category' : 'Sub-Category';
 		const items = (await fs.readdir(resolve(...piecePath)).catch(() => []))
-			.filter((basename) => fs.statSync(resolve(...piecePath, basename)).isDirectory())
+			.filter(async (basename) => (await fs.stat(resolve(...piecePath, basename))).isDirectory())
 			.map(label => ({ label }));
 
 		items.push(
