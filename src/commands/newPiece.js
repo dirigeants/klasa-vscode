@@ -1,6 +1,6 @@
 const fs = require('fs-nextra');
 const { window } = require('vscode');
-const { resolve } = require('path');
+const { resolve, basename } = require('path');
 
 const { Command, eventStore } = require('../lib');
 
@@ -38,9 +38,8 @@ module.exports = class extends Command {
 
 	async getCategory(piecePath) {
 		const category = piecePath.length === 2 ? 'Category' : 'Sub-Category';
-		const items = (await fs.readdir(resolve(...piecePath)).catch(() => []))
-			.filter((basename) => fs.statSync(resolve(...piecePath, basename)).isDirectory())
-			.map(label => ({ label }));
+		const paths = await fs.scan(resolve(...piecePath), { filter: stats => stats.isDirectory() }).catch(() => new Map());
+		const items = [...paths.keys()].map(absPath => ({ label: basename(absPath) }));
 
 		items.push(
 			{ label: `Create a new ${category}`, description: `Create a new command ${category} (aka folder)` },
