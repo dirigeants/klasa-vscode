@@ -1,13 +1,14 @@
 language: node_js
 node_js:
   - "8"
-install: npm install
+install: yarn
 jobs:
   include:
     - stage: test
-      script: npm run lint
+      script: yarn run lint
     - stage: deploy
       script: bash ./scripts/.travis-deploy.sh
 cache:
+  yarn: true
   directories:
     - node_modules
