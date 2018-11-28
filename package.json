@@ -71,6 +71,6 @@
     "dependencies": {
         "fs-nextra": "^0.3.7",
         "node-fetch": "^2.3.0",
-        "vscode": "^1.1.21"
+        "vscode": "^1.1.22"
     }
 }
