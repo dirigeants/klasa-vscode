@@ -1724,7 +1724,7 @@ replace-ext@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
-request@^2.79.0, request@^2.83.0:
+request@^2.79.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -2247,9 +2247,9 @@ vsce@^1.53.2:
     yauzl "^2.3.1"
     yazl "^2.2.2"
 
-vscode@^1.1.22:
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/vscode/-/vscode-1.1.22.tgz#0e088b43c3328d0330feb5c6db5a7d3d4ba1a231"
+vscode@^1.1.24:
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/vscode/-/vscode-1.1.24.tgz#e2464d638e23935d79e8ddb7822593557c271252"
   dependencies:
     glob "^7.1.2"
     gulp-chmod "^2.0.0"
@@ -2260,7 +2260,7 @@ vscode@^1.1.22:
     gulp-untar "^0.0.7"
     gulp-vinyl-zip "^2.1.2"
     mocha "^4.0.1"
-    request "^2.83.0"
+    request "^2.88.0"
     semver "^5.4.1"
     source-map-support "^0.5.0"
     url-parse "^1.4.3"
