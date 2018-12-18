@@ -69,7 +69,7 @@
         "vsce": "^1.53.2"
     },
     "dependencies": {
-        "fs-nextra": "^0.3.7",
+        "fs-nextra": "^0.3.8",
         "node-fetch": "^2.3.0",
         "vscode": "^1.1.26"
     }
