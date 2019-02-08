@@ -66,11 +66,11 @@
     "devDependencies": {
         "eslint": "^5.13.0",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
-        "vsce": "^1.56.0"
+        "vsce": "^1.56.0",
+        "vscode": "^1.1.29"
     },
     "dependencies": {
         "fs-nextra": "^0.3.8",
-        "node-fetch": "^2.3.0",
-        "vscode": "^1.1.29"
+        "node-fetch": "^2.3.0"
     }
 }
