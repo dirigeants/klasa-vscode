@@ -1893,9 +1893,9 @@ vinyl@^2.0.0, vinyl@^2.0.1, vinyl@^2.0.2:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
-vsce@^1.56.0:
-  version "1.56.0"
-  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.56.0.tgz#b6a0faddd8f0d45dce2e3b9d8f4e9a6aaa0b543d"
+vsce@^1.57.0:
+  version "1.57.0"
+  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.57.0.tgz#6a80e478a3df99e9ec74b9440e2b38cc265f0881"
   dependencies:
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.1"
