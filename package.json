@@ -14,8 +14,8 @@
         "url": "https://github.com/dirigeants/klasa-vscode/issues"
     },
     "engines": {
-        "node": ">=8.1.0",
-        "vscode": "^1.15.0"
+        "node": ">=10.1.0",
+        "vscode": "^1.31.0"
     },
     "keywords": [
         "klasa"
