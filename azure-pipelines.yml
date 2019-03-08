@@ -1,0 +1,13 @@
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: dirigeants/pipelines
+      endpoint: dirigeants
+
+jobs:
+  - template: lint.yml@templates
+
+  - template: scripts/deploy.yml
+    parameters:
+      dependsOn: 'Lint'
