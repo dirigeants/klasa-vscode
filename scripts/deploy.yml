@@ -21,12 +21,12 @@ jobs:
 
         echo -e "${BRANCH}"
 
-        if [[ "$BRANCH" != "refs/head/stable" ]]; then
-          echo -e "Not publishing for a non stable branch push."
-          exit 0
-        fi
-
         if [[ "$BUILD_REASON" != "IndividualCI" ]]; then
+          if [[ "$BRANCH" != "stable" ]]; then
+            echo -e "Not publishing for a non stable branch push."
+            exit 0
+          fi
+
           REPO=$(git config remote.origin.url)
           TARGET_BRANCH="stable"
           git clone $REPO dist -b $TARGET_BRANCH
