@@ -1,7 +1,7 @@
 # klasa-vscode [beta]
 
 [![](https://vsmarketplacebadge.apphb.com/version/bdistin.klasa-vscode.svg)](https://marketplace.visualstudio.com/items?itemName=bdistin.klasa-vscode)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a6ed042527b4d5c912b8ec1e375bfc4)](https://www.codacy.com/app/dirigeants/klasa-vscode?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=glaucus-pocus/klasa-vscode&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://dev.azure.com/dirigeants/klasa/_apis/build/status/dirigeants.klasa-vscode?branchName=master)](https://dev.azure.com/dirigeants/klasa/_build/latest?definitionId=7&branchName=master)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=dirigeants/klasa-vscode)](https://dependabot.com)
 
 Toolkit for Klasa Discord Bot development.

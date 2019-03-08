@@ -59,7 +59,7 @@
     "main": "./src/extension",
     "icon": "assets/klasa.gif",
     "scripts": {
-        "lint": "npx eslint src",
+        "test:lint": "npx eslint src",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "build": "node ./scripts/build"
     },
