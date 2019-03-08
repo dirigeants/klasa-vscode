@@ -21,7 +21,7 @@ jobs:
 
         echo -e "${BRANCH}"
 
-        if [[ "$BRANCH" != "stable" ]]; then
+        if [[ "$BRANCH" != "refs/head/stable" ]]; then
           echo -e "Not publishing for a non stable branch push."
           exit 0
         fi
@@ -41,7 +41,7 @@ jobs:
 
         npx vsce publish -p "${PUBLISH_TOKEN}"
       env:
-        BRANCH: $(Build.SourceBranchName)
+        BRANCH: $(System.PullRequest.TargetBranch)
         BUILD_REASON: $(Build.Reason)
         PUBLISH_TOKEN: $(publishToken)
       displayName: 'Deploy'
