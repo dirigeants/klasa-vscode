@@ -19,14 +19,7 @@ jobs:
 
         npm run build
 
-        echo -e "${BRANCH}"
-
-        if [[ "$BUILD_REASON" != "IndividualCI" ]]; then
-          if [[ "$BRANCH" != "stable" ]]; then
-            echo -e "Not publishing for a non stable branch push."
-            exit 0
-          fi
-
+        if [[ "$TARGET" = "stable" ]]; then
           REPO=$(git config remote.origin.url)
           TARGET_BRANCH="stable"
           git clone $REPO dist -b $TARGET_BRANCH
@@ -37,11 +30,16 @@ jobs:
           exit 0
         fi
 
+        if [[ "$BRANCH" != "stable" ]]; then
+          echo -e "Not publishing for a non stable branch push."
+          exit 0
+        fi
+
         echo -e "Publishing for a stable branch push."
 
         npx vsce publish -p "${PUBLISH_TOKEN}"
       env:
-        BRANCH: $(System.PullRequest.TargetBranch)
-        BUILD_REASON: $(Build.Reason)
+        TARGET: $(System.PullRequest.TargetBranch)
+        BRANCH: $(Build.SourceBranchName)
         PUBLISH_TOKEN: $(publishToken)
       displayName: 'Deploy'
