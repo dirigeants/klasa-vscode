@@ -19,6 +19,8 @@ jobs:
 
         npm run build
 
+        echo -e "${BRANCH}"
+
         if [[ "$BRANCH" != "stable" ]]; then
           echo -e "Not publishing for a non stable branch push."
           exit 0
