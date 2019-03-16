@@ -70,7 +70,7 @@
         "vscode": "^1.1.30"
     },
     "dependencies": {
-        "fs-nextra": "^0.4.3",
+        "fs-nextra": "^0.4.4",
         "node-fetch": "^2.3.0"
     }
 }
