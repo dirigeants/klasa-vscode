@@ -1262,16 +1262,16 @@ vsce@^1.58.0:
     yauzl "^2.3.1"
     yazl "^2.2.2"
 
-vscode-test@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/vscode-test/-/vscode-test-0.1.1.tgz#070fb1bb28ba8c94cbf06be27872a2ce23fa6fc5"
+vscode-test@^0.1.4:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/vscode-test/-/vscode-test-0.1.5.tgz#250534f90e78d37a84419a00f9bd15341e1a4f8f"
   dependencies:
     http-proxy-agent "^2.1.0"
     https-proxy-agent "^2.2.1"
 
-vscode@^1.1.32:
-  version "1.1.32"
-  resolved "https://registry.yarnpkg.com/vscode/-/vscode-1.1.32.tgz#83001913d69715104c86a8af88a571ecc34cb707"
+vscode@^1.1.33:
+  version "1.1.33"
+  resolved "https://registry.yarnpkg.com/vscode/-/vscode-1.1.33.tgz#e05d5ca25eb35d799fc20622af7c7a561abf6fba"
   dependencies:
     glob "^7.1.2"
     mocha "^4.0.1"
@@ -1279,7 +1279,7 @@ vscode@^1.1.32:
     semver "^5.4.1"
     source-map-support "^0.5.0"
     url-parse "^1.4.4"
-    vscode-test "^0.1.1"
+    vscode-test "^0.1.4"
 
 vso-node-api@6.1.2-preview:
   version "6.1.2-preview"
