@@ -1239,9 +1239,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vsce@^1.58.0:
-  version "1.58.0"
-  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.58.0.tgz#4231ed10bc17441f6f5073dfccca0729936671d6"
+vsce@^1.59.0:
+  version "1.59.0"
+  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.59.0.tgz#921362828d6c54b6d8d5b98fc01dcaa853f02f31"
   dependencies:
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.1"
