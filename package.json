@@ -71,6 +71,6 @@
     },
     "dependencies": {
         "fs-nextra": "^0.4.5",
-        "node-fetch": "^2.3.0"
+        "node-fetch": "^2.4.0"
     }
 }
