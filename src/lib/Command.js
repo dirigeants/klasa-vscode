@@ -1,4 +1,4 @@
-const { dirname, resolve, basename } = require('path');
+const { dirname, resolve, basename, extname } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
 const fs = require('fs-nextra');
 
@@ -50,7 +50,7 @@ class Command {
 		await fs.createFile(path);
 		const textDocument = await workspace.openTextDocument(Uri.file(path));
 		const editor = await window.showTextDocument(textDocument);
-		const fileType = path.endsWith('ts') ? 'ts' : 'js';
+		const fileType = extname(path) === 'ts' ? 'ts' : 'js';
 		await editor.insertSnippet(this.generateSnippet(type, fileType, options));
 		return editor;
 	}
