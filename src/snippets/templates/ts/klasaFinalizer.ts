@@ -10,7 +10,7 @@ export default class extends Finalizer {
 		super(client, store, file, directory, { enabled: $1 });
 	}
 
-	async run(message: KlasaMessage, command: Command, response: KlasaMessage | KlasaMessage[] | null, runTime: Stopwatch): Promise<void>; {
+	async run(message: KlasaMessage, command: Command, response: KlasaMessage | KlasaMessage[] | null, runTime: Stopwatch): Promise<void> {
 		// This is where you place the code you want to run for your finalizer
 		$0;
 	}
