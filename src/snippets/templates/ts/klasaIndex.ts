@@ -1,10 +1,10 @@
-import { Client } from 'klasa';
+import { Client, KlasaOptions } from 'klasa';
 import { config, token } from './config';
 
 export default class MyKlasaClient extends Client {
 
-	constructor(...args) {
-		super(...args);
+	constructor(options?: KlasaOptions) {
+		super(options);
 
 		// Add any properties to your Klasa Client
 	}
