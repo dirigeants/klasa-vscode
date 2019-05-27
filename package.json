@@ -1,8 +1,8 @@
 {
     "name": "klasa-vscode",
-    "displayName": "klasa-vscode",
-    "description": "Klasa extension for VS Code",
-    "version": "0.3.1",
+    "displayName": "Klasa",
+    "description": "Klasa companion for VS Code",
+    "version": "0.4",
     "publisher": "bdistin",
     "license": "MIT",
     "homepage": "https://github.com/dirigeants/klasa-vscode.git#readme",
