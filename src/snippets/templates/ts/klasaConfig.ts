@@ -1,3 +1,5 @@
+import { KlasaClient } from 'klasa';
+
 /**
  * The following are all client options for Klasa/Discord.js.
  * Any option that you wish to use the default value can be removed from this file.
@@ -27,7 +29,7 @@ export const config = {
 	// A presence to login with
 	presence: {},
 	// A once ready message for your console
-	readyMessage: (client) => `Successfully initialized. Ready to serve ${client.guilds.size} guild${client.guilds.size === 1 ? '' : 's'}.`,
+	readyMessage: (client: KlasaClient) => `Successfully initialized. Ready to serve ${client.guilds.size} guild${client.guilds.size === 1 ? '' : 's'}.`,
 
 	/**
 	 * Caching Options

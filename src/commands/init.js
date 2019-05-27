@@ -11,8 +11,9 @@ module.exports = class extends Command {
 			{ label: 'dirigeants/klasa', description: 'From Github repository' }
 		], { placeHolder: 'Select source:' });
 
-		const lang = workspace.getConfiguration('klasa').get('language');
-		const pkgManager = workspace.getConfiguration('klasa').get('packageManager');
+		const conf = workspace.getConfiguration('klasa');
+		const lang = conf.get('language');
+		const pkgManager = conf.get('packageManager');
 
 		if (!repo) throw undefined;
 
@@ -20,11 +21,12 @@ module.exports = class extends Command {
 
 		const editor = await this.createFile(resolve(mainDir, '.gitignore'), 'js', 'ignore file');
 		const editor2 = await this.createFile(resolve(baseDir, 'index'), lang, 'entry file');
+		conf.update('botEntry', `${resolve(mainDir, `index.${lang}`)}`);
 		await this.createFile(resolve(baseDir, 'config'), lang, 'config file');
 		await editor.document.save();
 		await editor2.document.save();
 		if (lang === 'ts') {
-			const editor3 = await this.createFile(resolve(baseDir, '.tsignore'), 'ts', 'compiler config file');
+			const editor3 = await this.createFile(resolve(baseDir, 'tsconfig.json'), 'ts', 'compiler config file');
 			await editor3.document.save();
 		}
 

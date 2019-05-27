@@ -46,7 +46,8 @@ class Command {
 	}
 
 	async createFile(path, lang, type, options) {
-		const fullPath = path.endsWith('.gitignore') ? path : `${path}.${lang}`;
+		const fullPath = path.endsWith('.gitignore') || path.endsWith('tsconfig.json') ? path : `${path}.${lang}`;
+		console.log(path.endsWith('tsconfig.json'));
 		if (await fs.pathExists(fullPath)) throw `${fullPath} already exists!`;
 		await fs.createFile(fullPath);
 		const textDocument = await workspace.openTextDocument(Uri.file(fullPath));
