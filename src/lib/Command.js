@@ -45,13 +45,13 @@ class Command {
 		// stub
 	}
 
-	async createFile(path, type, options) {
-		if (await fs.pathExists(path)) throw `${path} already exists!`;
-		await fs.createFile(path);
-		const textDocument = await workspace.openTextDocument(Uri.file(path));
+	async createFile(path, lang, type, options) {
+		const fullPath = path.endsWith('.gitignore') ? path : `${path}.${lang}`;
+		if (await fs.pathExists(fullPath)) throw `${fullPath} already exists!`;
+		await fs.createFile(fullPath);
+		const textDocument = await workspace.openTextDocument(Uri.file(fullPath));
 		const editor = await window.showTextDocument(textDocument);
-		const fileType = extname(path) === 'ts' ? 'ts' : 'js';
-		await editor.insertSnippet(this.generateSnippet(type, fileType, options));
+		await editor.insertSnippet(this.generateSnippet(type, lang, options));
 		return editor;
 	}
 

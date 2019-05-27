@@ -28,7 +28,8 @@
         "onCommand:klasa.newPiece",
         "onCommand:klasa.init",
         "onCommand:klasa.transfer",
-        "onCommand:klasa.download"
+        "onCommand:klasa.download",
+        "onCommand:klasa.setPreferences"
     ],
     "contributes": {
         "snippets": [
@@ -57,8 +58,27 @@
             {
                 "command": "klasa.download",
                 "title": "Klasa: Download a pre-built Provider"
+            },
+            {
+                "command": "klasa.setPreferences",
+                "title": "Klasa: Set language & package manager preferences"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Klasa configuration",
+            "properties": {
+                "klasa.language": {
+                    "type": "string",
+                    "default": "js",
+                    "description": "Which language to use for Klasa ('js' or 'ts')"
+                },
+                "klasa.packageManager": {
+                    "type": "string",
+                    "default": "npm",
+                    "description": "Which package manager to use for Klasa ('npm' or 'yarn')"
+                }
+            }
+        }
     },
     "main": "./src/extension",
     "icon": "assets/klasa.gif",
