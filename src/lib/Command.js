@@ -5,7 +5,7 @@ const fs = require('fs-nextra');
 const snippets = {
 	js: require('../../build/snippets.json'),
 	ts: require('../../build/snippets-ts.json')
-}
+};
 
 class Command {
 
