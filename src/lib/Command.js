@@ -2,7 +2,10 @@ const { dirname, resolve, basename } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
 const fs = require('fs-nextra');
 
-const snippets = require('../../build/snippets.json');
+const snippets = {
+	js: require('../../build/snippets.json'),
+	ts: require('../../build/snippets-ts.json')
+}
 
 class Command {
 
@@ -47,12 +50,13 @@ class Command {
 		await fs.createFile(path);
 		const textDocument = await workspace.openTextDocument(Uri.file(path));
 		const editor = await window.showTextDocument(textDocument);
-		await editor.insertSnippet(this.generateSnippet(type, options));
+		const fileType = path.endsWith('ts') ? 'ts' : 'js';
+		await editor.insertSnippet(this.generateSnippet(type, fileType, options));
 		return editor;
 	}
 
-	generateSnippet(type, event) {
-		let content = snippets[`Create new Klasa ${type}`].body.join('\n');
+	generateSnippet(type, lang, event) {
+		let content = snippets[lang][`Create new Klasa ${type}`].body.join('\n');
 		if (event) content = content.replace(/\.\.\.params/g, event.arguments || '');
 		return new SnippetString(content);
 	}

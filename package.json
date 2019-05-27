@@ -35,6 +35,10 @@
             {
                 "language": "javascript",
                 "path": "./build/snippets.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./build/snippets-ts.json"
             }
         ],
         "commands": [

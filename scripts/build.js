@@ -1,4 +1,6 @@
 const fs = require('fs-nextra');
-const snippets = require('../src/snippets/index');
+const jsSnippets = require('../src/snippets/javascript');
+const tsSnippets = require('../src/snippets/typescript');
 
-fs.outputJSON('./build/snippets.json', snippets);
+fs.outputJSON('./build/snippets.json', jsSnippets);
+fs.outputJSON('./build/snippets-ts.json', tsSnippets);
