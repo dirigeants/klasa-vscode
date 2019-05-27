@@ -24,15 +24,15 @@ module.exports = class extends Command {
 		if (!repo || !lang || !pkgManager) throw undefined;
 
 		const terminal = window.createTerminal('Klasa');
+
+		const editor = await this.createFile(resolve(mainDir, '.gitignore'), 'ignore file');
+		await editor.document.save();
+
 		if (lang === 'JavaScript') {
-			const editor = await this.createFile(resolve(mainDir, '.gitignore'), 'ignore file');
-			await editor.document.save();
 			const editor2 = await this.createFile(resolve(baseDir, 'index.js'), 'entry file');
 			await editor2.document.save();
 			await this.createFile(resolve(baseDir, 'config.js'), 'config file');
 		} else {
-			const editor = await this.createFile(resolve(mainDir, '.gitignore'), 'ignore file');
-			await editor.document.save();
 			const editor2 = await this.createFile(resolve(baseDir, 'index.ts'), 'entry file');
 			await editor2.document.save();
 			await this.createFile(resolve(baseDir, 'config.ts'), 'config file');
