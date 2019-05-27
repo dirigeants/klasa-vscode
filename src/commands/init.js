@@ -23,11 +23,18 @@ module.exports = class extends Command {
 		await this.createFile(resolve(baseDir, 'config'), lang, 'config file');
 		await editor.document.save();
 		await editor2.document.save();
+		if (lang === 'ts') {
+			const editor3 = await this.createFile(resolve(baseDir, '.tsignore'), 'ts', 'compiler config file');
+			await editor3.document.save();
+		}
 
 		terminal.show();
 		terminal.sendText(`cd "${mainDir}"`);
+
 		terminal.sendText(pkgManager === 'yarn' ? 'yarn init -y' : 'npm init -y');
-		terminal.sendText(pkgManager === 'yarn' ? `yarn add discordjs/discord.js ${repo}` : `npm i discordjs/discord.js ${repo}`);
+		terminal.sendText(pkgManager === 'yarn' ? `yarn add discordjs/discord.js ${repo}` : `npm i --save discordjs/discord.js ${repo}`);
+
+		if (lang === 'ts') terminal.sendText(pkgManager === 'yarn' ? 'yarn add typescript @types/node' : 'npm install --save typescript @types/node');
 	}
 
 };

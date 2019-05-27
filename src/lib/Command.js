@@ -1,4 +1,4 @@
-const { dirname, resolve, basename, extname } = require('path');
+const { dirname, resolve, basename } = require('path');
 const { workspace, SnippetString, window, Uri } = require('vscode');
 const fs = require('fs-nextra');
 
@@ -62,10 +62,15 @@ class Command {
 	}
 
 	static getDirs(workspaceFolder) {
+		const mainFile = workspace.getConfiguration('klasa').get('botEntry');
 		let baseDir;
 		try {
-			const { main } = require(resolve(workspaceFolder.uri.fsPath, 'package.json'));
-			baseDir = resolve(workspaceFolder.uri.fsPath, dirname(main));
+			if (!mainFile) {
+				const { main } = require(resolve(workspaceFolder.uri.fsPath, 'package.json'));
+				baseDir = resolve(workspaceFolder.uri.fsPath, dirname(main));
+			} else {
+				baseDir = resolve(workspaceFolder.uri.fsPath, dirname(mainFile));
+			}
 		} catch (err) {
 			baseDir = resolve(workspaceFolder.uri.fsPath, 'src');
 		}

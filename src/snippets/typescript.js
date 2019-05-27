@@ -68,6 +68,8 @@ module.exports = {
 
 	'Create new Klasa config file': new Snippet('klasaConfig', 'ts', []),
 
+	'Create new Klasa compiler config file': new Snippet('tsconfig.json', null, []),
+
 	'Create new Klasa entry file': new Snippet('klasaIndex', 'ts', [])
 
 };

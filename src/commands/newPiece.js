@@ -1,10 +1,15 @@
 const fs = require('fs-nextra');
-const { window } = require('vscode');
+const { window, workspace } = require('vscode');
 const { resolve, basename } = require('path');
 
 const { Command, eventStore } = require('../lib');
 
 module.exports = class extends Command {
+
+	constructor(...args) {
+		super(...args);
+		this.language = workspace.getConfiguration('klasa').get('language');
+	}
 
 	async run(mainDir, baseDir) {
 		const pieceType = await window.showQuickPick(this.pieceTypes, { placeHolder: 'Select piece type:' });
@@ -16,14 +21,14 @@ module.exports = class extends Command {
 
 		const pieceName = await this.getName(pieceType);
 
-		return this.createFile(resolve(...piecePath, `${pieceName}.js`), pieceType.toLowerCase());
+		return this.createFile(resolve(...piecePath, `${pieceName}`), this.language, pieceType.toLowerCase());
 	}
 
 	async event(piecePath) {
 		const event = await window.showQuickPick(eventStore, { placeHolder: 'Select event', ignoreFocusOut: true, matchOnDescription: true });
 		if (!event) throw 'Aborted event creation';
 
-		return this.createFile(resolve(...piecePath, `${event.label}.js`), 'event', event);
+		return this.createFile(resolve(...piecePath, `${event.label}`), this.language, 'event', event);
 	}
 
 	async command(piecePath) {
