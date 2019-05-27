@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = class Snippet {
 
 	constructor(loc, lang, fields) {
-		loc = lang ? 
+		loc = lang ?
 			path.resolve(__dirname, 'templates', lang, loc) :
 			path.resolve(__dirname, 'templates', loc);
 		const file = fs.readFileSync(lang ? `${loc}.${lang}` : `${loc}`, 'utf8');
