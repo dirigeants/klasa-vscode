@@ -76,6 +76,11 @@
                     "type": "string",
                     "default": "npm",
                     "description": "Which package manager to use for Klasa ('npm' or 'yarn')"
+                },
+                "klasa.botEntry": {
+                    "type": "string",
+                    "default": "src/index.js",
+                    "description": "What is the path to your bot file (relative to the project root)?"
                 }
             }
         }
