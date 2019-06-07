@@ -18,8 +18,6 @@ exports.config = {
 	preserveSettings: true,
 	// If your bot should be able to mention @everyone
 	disableEveryone: false,
-	// Whether d.js should queue your rest request in 'sequential' or 'burst' mode
-	apiRequestMethod: 'sequential',
 	// The time in ms to add to ratelimits, to ensure you wont hit a 429 response
 	restTimeOffset: 500,
 	// Any Websocket Events you don't want to listen to
