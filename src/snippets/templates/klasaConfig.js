@@ -40,7 +40,6 @@ exports.config = {
 	/**
 	 * Sharding Options
 	 */
-	shardId: 0,
 	shardCount: 0,
 
 	/**
