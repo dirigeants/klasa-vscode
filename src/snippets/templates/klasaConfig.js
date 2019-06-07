@@ -109,7 +109,6 @@ exports.config = {
 		},
 		extendables: {
 			enabled: true,
-			klasa: false,
 			appliesTo: []
 		},
 		finalizers: { enabled: true },
@@ -126,11 +125,7 @@ exports.config = {
 			ignoreWebhooks: true,
 			ignoreEdits: true
 		},
-		providers: {
-			enabled: true,
-			sql: false,
-			cache: false
-		},
+		providers: { enabled: true },
 		tasks: { enabled: true }
 	},
 
