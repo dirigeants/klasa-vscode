@@ -267,6 +267,10 @@ denodeify@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/denodeify/-/denodeify-1.2.1.tgz#3a36287f5034e699e7577901052c2e6c94251631"
 
+didyoumean@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/didyoumean/-/didyoumean-1.2.1.tgz#e92edfdada6537d484d73c0172fd1eba0c4976ff"
+
 diff@3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
@@ -1244,15 +1248,16 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vsce@^1.62.0:
-  version "1.62.0"
-  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.62.0.tgz#dbcc241721cb05e1d0ff4bc6eb14f81808d006a8"
+vsce@^1.63.0:
+  version "1.63.0"
+  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.63.0.tgz#41c1384736cf08d483f50c049b99257d1e7126e0"
   dependencies:
     azure-devops-node-api "^7.2.0"
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.1"
     commander "^2.8.1"
     denodeify "^1.2.1"
+    didyoumean "^1.2.1"
     glob "^7.0.6"
     lodash "^4.17.10"
     markdown-it "^8.3.1"
