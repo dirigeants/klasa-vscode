@@ -67,7 +67,7 @@
         "eslint": "^5.16.0",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
         "vsce": "^1.64.0",
-        "vscode": "^1.1.34"
+        "vscode": "^1.1.35"
     },
     "dependencies": {
         "fs-nextra": "^0.4.5",
