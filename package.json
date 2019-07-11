@@ -64,7 +64,7 @@
         "build": "node ./scripts/build"
     },
     "devDependencies": {
-        "eslint": "^5.16.0",
+        "eslint": "^6.0.1",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
         "vsce": "^1.65.0",
         "vscode": "^1.1.35"
