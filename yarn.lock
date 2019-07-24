@@ -1266,9 +1266,9 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vsce@^1.65.0:
-  version "1.65.0"
-  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.65.0.tgz#8aa4ef92fdd7f57495e074e54caea404ed29ccb2"
+vsce@^1.66.0:
+  version "1.66.0"
+  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.66.0.tgz#8cf1d64a4825d5d0523ea5efd0bf41e2c6829565"
   dependencies:
     azure-devops-node-api "^7.2.0"
     chalk "^2.4.2"
