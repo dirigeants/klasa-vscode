@@ -66,7 +66,7 @@
     "devDependencies": {
         "eslint": "^6.5.1",
         "eslint-config-klasa": "github:dirigeants/klasa-lint",
-        "vsce": "^1.66.0",
+        "vsce": "^1.67.1",
         "vscode": "^1.1.36"
     },
     "dependencies": {
