@@ -454,9 +454,9 @@ flatted@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
 
-fs-nextra@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/fs-nextra/-/fs-nextra-0.4.5.tgz#0f44a00dd6c0547adaf59ce875e59941d0c70664"
+fs-nextra@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/fs-nextra/-/fs-nextra-0.5.0.tgz#ca405715bf2317bca68f7c0c65caca1277ee1f7d"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
