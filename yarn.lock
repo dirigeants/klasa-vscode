@@ -1068,9 +1068,9 @@ v8-compile-cache@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.3.tgz#00f7494d2ae2b688cfe2899df6ed2c54bef91dbe"
 
-vsce@^1.75.0:
-  version "1.75.0"
-  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.75.0.tgz#1207e12ca632cd41ac66c33d23c3a09d74a75525"
+vsce@^1.81.0:
+  version "1.81.0"
+  resolved "https://registry.yarnpkg.com/vsce/-/vsce-1.81.0.tgz#e63ecd4352553a69563ea1a7b7f9863c7cad1301"
   dependencies:
     azure-devops-node-api "^7.2.0"
     chalk "^2.4.2"
